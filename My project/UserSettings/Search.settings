@@ -69,6 +69,14 @@ providers = {
 objectSelectors = {
 }
 recentSearches = [
+	"xri right locom"
+	"xri right"
+	"xri right l"
+	"xri right lo"
+	"xri right loc"
+	"xri rig"
+	"xri right locomotio"
+	"xri right/"
 	"xri right i"
 	"xri right interact"
 	"xri right "
@@ -80,12 +88,7 @@ recentSearches = [
 	"xri left interact"
 	"xri right/tr"
 	"xri ri"
-	"xri right/"
 	"xri left/tr"
-	"xri left/ro"
-	"xri righ"
-	"xri left"
-	"xri def"
 ]
 searchItemFavorites = [
 ]

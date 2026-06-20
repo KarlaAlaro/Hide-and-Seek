@@ -483,6 +483,7 @@
 -analyzer:"/Applications/Unity/Hub/Editor/6000.2.13f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll"
 "Assets/Scripts/AnimateHandOnInput.cs"
 "Assets/Scripts/InputTest.cs"
+"Assets/Scripts/TeleportationActivator.cs"
 "Assets/TutorialInfo/Scripts/Readme.cs"
 -langversion:9.0
 /deterministic
