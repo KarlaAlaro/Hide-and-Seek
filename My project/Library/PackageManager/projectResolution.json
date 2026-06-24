@@ -69,6 +69,16 @@
       "source": "builtin",
       "testable": false
     },
+    "com.unity.postprocessing@3.5.0": {
+      "name": "com.unity.postprocessing",
+      "displayName": "Post Processing",
+      "resolvedPath": "/Users/karlaalaro/Desktop/Hide-and-Seek/My project/Library/PackageCache/com.unity.postprocessing@94edadb6c5ab",
+      "fingerprint": "94edadb6c5ab827a382b0d6f5f550866ffcfc586",
+      "editorCompatibility": "2019.4.19f1",
+      "version": "3.5.0",
+      "source": "registry",
+      "testable": false
+    },
     "com.unity.render-pipelines.universal@17.2.0": {
       "name": "com.unity.render-pipelines.universal",
       "displayName": "Universal Render Pipeline",
@@ -77,6 +87,26 @@
       "editorCompatibility": "6000.2.0a1",
       "version": "17.2.0",
       "source": "builtin",
+      "testable": false
+    },
+    "com.unity.shadergraph@17.2.0": {
+      "name": "com.unity.shadergraph",
+      "displayName": "Shader Graph",
+      "resolvedPath": "/Users/karlaalaro/Desktop/Hide-and-Seek/My project/Library/PackageCache/com.unity.shadergraph@fb6c7a62c815",
+      "fingerprint": "fb6c7a62c815425a44fd142a0527cec5c6603e50",
+      "editorCompatibility": "6000.2.0a1",
+      "version": "17.2.0",
+      "source": "builtin",
+      "testable": false
+    },
+    "com.unity.terrain-tools@5.3.2": {
+      "name": "com.unity.terrain-tools",
+      "displayName": "Terrain Tools",
+      "resolvedPath": "/Users/karlaalaro/Desktop/Hide-and-Seek/My project/Library/PackageCache/com.unity.terrain-tools@bcd5ab3144b8",
+      "fingerprint": "bcd5ab3144b868316d5a649c5717efeab9236c2a",
+      "editorCompatibility": "6000.0.0a1",
+      "version": "5.3.2",
+      "source": "registry",
       "testable": false
     },
     "com.unity.test-framework@1.6.0": {
@@ -501,14 +531,14 @@
       "source": "builtin",
       "testable": false
     },
-    "com.unity.shadergraph@17.2.0": {
-      "name": "com.unity.shadergraph",
-      "displayName": "Shader Graph",
-      "resolvedPath": "/Users/karlaalaro/Desktop/Hide-and-Seek/My project/Library/PackageCache/com.unity.shadergraph@fb6c7a62c815",
-      "fingerprint": "fb6c7a62c815425a44fd142a0527cec5c6603e50",
-      "editorCompatibility": "6000.2.0a1",
-      "version": "17.2.0",
-      "source": "builtin",
+    "com.unity.searcher@4.9.3": {
+      "name": "com.unity.searcher",
+      "displayName": "Searcher",
+      "resolvedPath": "/Users/karlaalaro/Desktop/Hide-and-Seek/My project/Library/PackageCache/com.unity.searcher@1e17ce91558d",
+      "fingerprint": "1e17ce91558d1d9127554adc03d275f39a7466a2",
+      "editorCompatibility": "2019.1.0a1",
+      "version": "4.9.3",
+      "source": "registry",
       "testable": false
     },
     "com.unity.render-pipelines.universal-config@17.0.3": {
@@ -519,16 +549,6 @@
       "editorCompatibility": "6000.0.0a1",
       "version": "17.0.3",
       "source": "builtin",
-      "testable": false
-    },
-    "com.unity.searcher@4.9.3": {
-      "name": "com.unity.searcher",
-      "displayName": "Searcher",
-      "resolvedPath": "/Users/karlaalaro/Desktop/Hide-and-Seek/My project/Library/PackageCache/com.unity.searcher@1e17ce91558d",
-      "fingerprint": "1e17ce91558d1d9127554adc03d275f39a7466a2",
-      "editorCompatibility": "2019.1.0a1",
-      "version": "4.9.3",
-      "source": "registry",
       "testable": false
     },
     "com.unity.burst@1.8.25": {
