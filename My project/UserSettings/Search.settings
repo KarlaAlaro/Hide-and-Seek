@@ -11,7 +11,7 @@ showStatusBar = false
 scopes = {
 	"picker_window_position_offset.00000000" = "-577;186;505;550"
 	"picker_visibility_flags.00000000" = "0"
-	"picker_item_size.00000000" = "1"
+	"picker_item_size.00000000" = "32"
 	"picker_inspector.00000000" = "0"
 }
 providers = {
@@ -69,6 +69,9 @@ providers = {
 objectSelectors = {
 }
 recentSearches = [
+	"gri"
+	"XRI"
+	"xri DEFU"
 	"activate val"
 	"select"
 	"xri left interaction/se"
@@ -86,8 +89,6 @@ recentSearches = [
 	"xri right interact"
 	"xri right "
 	"xri left interaction s"
-	"xri left in"
-	"xri left interacti"
 ]
 searchItemFavorites = [
 ]

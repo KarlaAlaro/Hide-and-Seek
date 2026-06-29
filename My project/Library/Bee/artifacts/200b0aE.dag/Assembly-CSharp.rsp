@@ -489,7 +489,11 @@
 "Assets/Polytope Studio/Lowpoly_Demos/Environment_Free/Helpers/PT_MouseLook.cs"
 "Assets/Polytope Studio/Lowpoly_Demos/Environment_Free/Helpers/PT_PlayerMovement.cs"
 "Assets/Scripts/AnimateHandOnInput.cs"
+"Assets/Scripts/DestroyOnGround.cs"
+"Assets/Scripts/ForceGrab.cs"
+"Assets/Scripts/HammerHit.cs"
 "Assets/Scripts/InputTest.cs"
+"Assets/Scripts/ProjectileLauncher.cs"
 "Assets/Scripts/TeleportationActivator.cs"
 "Assets/TutorialInfo/Scripts/Readme.cs"
 -langversion:9.0
