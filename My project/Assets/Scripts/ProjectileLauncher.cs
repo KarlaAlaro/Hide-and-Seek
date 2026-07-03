@@ -1,36 +1,65 @@
 using UnityEngine;
+using System.Collections;
 
 public class ProjectileLauncher : MonoBehaviour
 {
     public Transform launchPoint;
     public GameObject projectile;
     public Transform player;
-    public float launchSpeed = 8f;
+    public float launchSpeed = 15f;
     public float maxSpreadAngle = 35f;
+    public float firstThrowDelay = 2f;
+    public float throwInterval = 2.75f;
+    public float throwReleaseDelay = 0.55f;
+    public Animator bunnyAnimator;
+
     private int noOfAcorns;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private Coroutine throwLoop;
+
     void Start()
     {
-        InvokeRepeating("SpawnAcorn", 2, 2f);
-       
-
-        
+        throwLoop = StartCoroutine(ThrowLoop());
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnDisable()
     {
-        
+        if (throwLoop != null)
+        {
+            StopCoroutine(throwLoop);
+            throwLoop = null;
+        }
     }
+
+    IEnumerator ThrowLoop()
+    {
+        yield return new WaitForSeconds(firstThrowDelay);
+
+        while (true)
+        {
+            SpawnAcorn();
+            yield return new WaitForSeconds(throwReleaseDelay);
+            LaunchAcorn();
+            yield return new WaitForSeconds(throwInterval);
+        }
+    }
+
     void SpawnAcorn()
     {
-         /*if(noOfAcorns == 10)
-        {
-           CancelInvoke(); 
-           return;
-        }*/
-        
         noOfAcorns += 1;
+
+        if (bunnyAnimator != null)
+        {
+            bunnyAnimator.SetTrigger("Throw");
+        }
+    }
+
+    public void LaunchAcorn()
+    {   
+        if (launchPoint == null || projectile == null || player == null)
+        {
+            return;
+        }
+
         var _projectile = Instantiate(projectile, launchPoint.position, launchPoint.rotation);
 
         // Get direction toward player
@@ -44,7 +73,12 @@ public class ProjectileLauncher : MonoBehaviour
         spreadDirection.y += 0.3f;
         spreadDirection.Normalize();
         
-        _projectile.GetComponent<Rigidbody>().linearVelocity = spreadDirection * launchSpeed;
+        Rigidbody projectileRigidbody = _projectile.GetComponent<Rigidbody>();
+
+        if (projectileRigidbody != null)
+        {
+            projectileRigidbody.linearVelocity = spreadDirection * launchSpeed;
+        }
         
     }
 }
