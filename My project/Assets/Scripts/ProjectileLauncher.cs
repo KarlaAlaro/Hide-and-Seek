@@ -61,7 +61,18 @@ public class ProjectileLauncher : MonoBehaviour
         }
 
         var _projectile = Instantiate(projectile, launchPoint.position, launchPoint.rotation);
+        AcornReturnState acornState = _projectile.GetComponent<AcornReturnState>();
 
+<<<<<<< Updated upstream
+=======
+        if (acornState == null)
+        {
+            acornState = _projectile.AddComponent<AcornReturnState>();
+        }
+
+        acornState.ResetForLaunch();
+
+>>>>>>> Stashed changes
         // Get direction toward player
         Vector3 directionToPlayer = (player.position - launchPoint.position).normalized;
         
