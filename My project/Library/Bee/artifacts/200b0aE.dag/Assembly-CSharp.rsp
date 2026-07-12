@@ -385,6 +385,8 @@
 -r:"Library/PackageCache/com.unity.nuget.mono-cecil@d78732e851eb/Mono.Cecil.dll"
 -r:"Library/PackageCache/com.unity.visualscripting@b4d700247d4b/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
 -r:"Library/Bee/artifacts/200b0aE.dag/PPv2URPConverters.ref.dll"
+-r:"Library/Bee/artifacts/200b0aE.dag/Unity.2D.Sprite.AIIntegration.Editor.ref.dll"
+-r:"Library/Bee/artifacts/200b0aE.dag/Unity.2D.Sprite.Editor.ref.dll"
 -r:"Library/Bee/artifacts/200b0aE.dag/Unity.AI.Navigation.Editor.ConversionSystem.ref.dll"
 -r:"Library/Bee/artifacts/200b0aE.dag/Unity.AI.Navigation.Editor.ref.dll"
 -r:"Library/Bee/artifacts/200b0aE.dag/Unity.AI.Navigation.ref.dll"
@@ -490,10 +492,8 @@
 "Assets/Polytope Studio/Lowpoly_Demos/Environment_Free/Helpers/PT_PlayerMovement.cs"
 "Assets/Scripts/AcornReturnState.cs"
 "Assets/Scripts/AnimateHandOnInput.cs"
-<<<<<<< Updated upstream
-=======
 "Assets/Scripts/BunnyCatchCounter.cs"
->>>>>>> Stashed changes
+"Assets/Scripts/BunnyProximityUI.cs"
 "Assets/Scripts/DestroyOnGround.cs"
 "Assets/Scripts/ForceGrab.cs"
 "Assets/Scripts/HammerHit.cs"
