@@ -9,6 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/VR Starter Scene.unity
     guid: 1da89eb2f897c4459a8bc3843abe7d62
   m_configObjects:
+    Unity.XR.OpenVR.Settings: {fileID: 11400000, guid: c955e2d14aa0149c7a8d2648d928c2dd, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
     com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 2beb6c2938ccb4f1190811b09273a7a9, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 0aaac0ac528c542dc8e6fea5a403ab33, type: 2}

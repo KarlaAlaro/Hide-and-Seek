@@ -6,7 +6,8 @@
   "inputs": [
     "/Users/karlaalaro/Desktop/Hide-and-Seek/My project/Packages/manifest.json",
     "/Users/karlaalaro/Desktop/Hide-and-Seek/My project/Packages/packages-lock.json",
-    "/Applications/Unity/Hub/Editor/6000.2.13f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/BuiltInPackagesCombined.sha1"
+    "/Applications/Unity/Hub/Editor/6000.2.13f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/BuiltInPackagesCombined.sha1",
+    "/Users/karlaalaro/Desktop/Hide-and-Seek/My project/Assets/SteamVR/OpenVRUnityXRPackage/Editor/com.valvesoftware.unity.openvr-1.2.1.tgz"
   ],
   "outputs": {
     "com.unity.2d.sprite@1.0.0": {
@@ -19,13 +20,13 @@
       "source": "builtin",
       "testable": false
     },
-    "com.unity.ai.navigation@2.0.9": {
+    "com.unity.ai.navigation@2.0.13": {
       "name": "com.unity.ai.navigation",
       "displayName": "AI Navigation",
-      "resolvedPath": "/Users/karlaalaro/Desktop/Hide-and-Seek/My project/Library/PackageCache/com.unity.ai.navigation@5218e4bf7edc",
-      "fingerprint": "5218e4bf7edc04fcad4ed3836c1c41aef334b996",
+      "resolvedPath": "/Users/karlaalaro/Desktop/Hide-and-Seek/My project/Library/PackageCache/com.unity.ai.navigation@42d896194035",
+      "fingerprint": "42d896194035bae4d686b8dbc562b702b14fea31",
       "editorCompatibility": "6000.0.0a1",
-      "version": "2.0.9",
+      "version": "2.0.13",
       "source": "registry",
       "testable": false
     },
@@ -207,6 +208,16 @@
       "editorCompatibility": "2022.3.0a1",
       "version": "1.16.1",
       "source": "registry",
+      "testable": false
+    },
+    "com.valvesoftware.unity.openvr@file:/Users/karlaalaro/Desktop/Hide-and-Seek/My project/Assets/SteamVR/OpenVRUnityXRPackage/Editor/com.valvesoftware.unity.openvr-1.2.1.tgz": {
+      "name": "com.valvesoftware.unity.openvr",
+      "displayName": "OpenVR XR Plugin",
+      "resolvedPath": "/Users/karlaalaro/Desktop/Hide-and-Seek/My project/Library/PackageCache/com.valvesoftware.unity.openvr@970ac47786c4",
+      "fingerprint": "970ac47786c43348c742a3dfcdae5c8e",
+      "editorCompatibility": "2019.4.0a1",
+      "version": "1.2.1",
+      "source": "local-tarball",
       "testable": false
     },
     "com.unity.modules.accessibility@1.0.0": {
@@ -481,16 +492,6 @@
       "source": "builtin",
       "testable": false
     },
-    "com.unity.xr.core-utils@2.5.3": {
-      "name": "com.unity.xr.core-utils",
-      "displayName": "XR Core Utilities",
-      "resolvedPath": "/Users/karlaalaro/Desktop/Hide-and-Seek/My project/Library/PackageCache/com.unity.xr.core-utils@f0450cbac8d6",
-      "fingerprint": "f0450cbac8d66beb614cb1b4241eae977ee9990e",
-      "editorCompatibility": "2021.3.0f1",
-      "version": "2.5.3",
-      "source": "registry",
-      "testable": false
-    },
     "com.unity.xr.legacyinputhelpers@2.1.12": {
       "name": "com.unity.xr.legacyinputhelpers",
       "displayName": "XR Legacy Input Helpers",
@@ -498,6 +499,16 @@
       "fingerprint": "b7579e86f3b456c909fda6b875fba7ab1eeb1322",
       "editorCompatibility": "2019.4.0a1",
       "version": "2.1.12",
+      "source": "registry",
+      "testable": false
+    },
+    "com.unity.xr.core-utils@2.5.3": {
+      "name": "com.unity.xr.core-utils",
+      "displayName": "XR Core Utilities",
+      "resolvedPath": "/Users/karlaalaro/Desktop/Hide-and-Seek/My project/Library/PackageCache/com.unity.xr.core-utils@f0450cbac8d6",
+      "fingerprint": "f0450cbac8d66beb614cb1b4241eae977ee9990e",
+      "editorCompatibility": "2021.3.0f1",
+      "version": "2.5.3",
       "source": "registry",
       "testable": false
     },
