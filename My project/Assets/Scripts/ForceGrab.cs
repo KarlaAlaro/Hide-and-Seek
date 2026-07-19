@@ -23,6 +23,8 @@ public class ForceGrab : MonoBehaviour
     private bool originalUseGravity;
     private bool originalIsKinematic;
     private bool originalFreezeRotation;
+    public GameObject controllerVisual;
+    public GameObject lineVisual;
 
     void OnEnable()
     {
@@ -52,7 +54,11 @@ public class ForceGrab : MonoBehaviour
 
     void OnGrip(InputAction.CallbackContext context)
     {
-        if (!isPulling && !isHolding)
+        if (isHolding)
+        {
+            DropObject();
+        }
+        else if (!isPulling)
         {
             FindTarget();
         }
@@ -60,7 +66,7 @@ public class ForceGrab : MonoBehaviour
 
     void OnGripReleased(InputAction.CallbackContext context)
     {
-        DropObject();
+  
     }
 
     void FindTarget()
@@ -72,10 +78,14 @@ public class ForceGrab : MonoBehaviour
 
         float closestDistance = grabRange;
         GameObject closest = null;
+        UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable closestInteractable = null;
 
         foreach (Collider col in colliders)
         {
-            if (col.GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>() != null)
+            UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable interactable =
+                col.GetComponentInParent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>();
+
+            if (interactable != null)
             {
                 float distance = Vector3.Distance(
                     transform.position,
@@ -85,7 +95,8 @@ public class ForceGrab : MonoBehaviour
                 if (distance < closestDistance)
                 {
                     closestDistance = distance;
-                    closest = col.gameObject;
+                    closest = interactable.gameObject;
+                    closestInteractable = interactable;
                 }
             }
         }
@@ -94,7 +105,7 @@ public class ForceGrab : MonoBehaviour
         {
             targetObject = closest;
             targetRigidbody = closest.GetComponent<Rigidbody>();
-            targetInteractable = closest.GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>();
+            targetInteractable = closestInteractable;
             originalParent = closest.transform.parent;
 
             if (targetRigidbody != null)
@@ -142,7 +153,11 @@ public class ForceGrab : MonoBehaviour
     {
         isPulling = false;
         isHolding = true;
-
+        if (controllerVisual !=null && lineVisual!=null)
+        {
+            lineVisual.SetActive(false);
+            controllerVisual.SetActive(false);
+        }
         if (targetRigidbody != null)
         {
             targetRigidbody.useGravity = false;
@@ -160,6 +175,11 @@ public class ForceGrab : MonoBehaviour
 
     void DropObject()
     {
+        if (controllerVisual !=null && lineVisual!=null)
+        {
+            lineVisual.SetActive(true);
+            controllerVisual.SetActive(true);
+        }
         if (targetObject == null)
         {
             isPulling = false;

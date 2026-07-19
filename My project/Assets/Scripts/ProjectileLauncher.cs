@@ -4,6 +4,10 @@ using System.Collections;
 public class ProjectileLauncher : MonoBehaviour
 {
     public Transform launchPoint;
+    public BunnyRunToGameSpot bunnyRunner;
+    public BunnyCatchCounter bunnyCatchCounter;
+    public int throwsBeforeBunnyMoves = 3;
+    private int throwsSinceLastMove;
     public GameObject projectile;
     public Transform player;
     public float launchSpeed = 15f;
@@ -36,11 +40,31 @@ public class ProjectileLauncher : MonoBehaviour
 
         while (true)
         {
+            while (bunnyCatchCounter != null && bunnyCatchCounter.IsCelebrating)
+            {
+                yield return null;
+            }
             SpawnAcorn();
             yield return new WaitForSeconds(throwReleaseDelay);
             LaunchAcorn();
-            yield return new WaitForSeconds(throwInterval);
-        }
+             throwsSinceLastMove++;
+
+            if (throwsSinceLastMove >= throwsBeforeBunnyMoves)
+            {
+                throwsSinceLastMove = 0;
+
+                if (bunnyRunner != null)
+                {
+                    bunnyRunner.RunToRandomGameSpot();
+
+                    while (!bunnyRunner.HasArrived)
+                    {
+                        yield return null;
+                    }
+                }
+            }
+                yield return new WaitForSeconds(throwInterval);
+            }
     }
 
     void SpawnAcorn()

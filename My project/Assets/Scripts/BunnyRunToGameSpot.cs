@@ -4,7 +4,9 @@ using UnityEngine.AI;
 public class BunnyRunToGameSpot : MonoBehaviour
 {
     public NavMeshAgent agent;
+    public Transform[] gameSpots;
     public Transform gameSpot;
+    private int currentGameSpotIndex;
     public Transform lookAtTarget;
     public Animator bunnyAnimator;
     public bool runOnStart = true;
@@ -39,9 +41,11 @@ public class BunnyRunToGameSpot : MonoBehaviour
         {
             return;
         }
-
+        
         if (NavMesh.SamplePosition(gameSpot.position, out NavMeshHit hit, 2f, agent.areaMask))
         {
+
+            HasArrived = false;
             agent.isStopped = false;
             agent.SetDestination(hit.position);
         }
@@ -50,7 +54,6 @@ public class BunnyRunToGameSpot : MonoBehaviour
             return;
         }
 
-        HasArrived = false;
         hasDestination = true;
 
         if (bunnyAnimator != null)
@@ -105,5 +108,25 @@ public class BunnyRunToGameSpot : MonoBehaviour
 
         Quaternion targetRotation = Quaternion.LookRotation(direction.normalized) * Quaternion.Euler(0f, facingOffsetY, 0f);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, turnSpeed * Time.deltaTime);
+    }
+    public void RunToRandomGameSpot()
+    {
+        if (gameSpots == null || gameSpots.Length == 0)
+        {
+            RunToGameSpot();
+            return;
+        }
+
+        int nextIndex = Random.Range(0, gameSpots.Length);
+
+        while (nextIndex == currentGameSpotIndex && gameSpots.Length > 1)
+        {
+            nextIndex = Random.Range(0, gameSpots.Length);
+        }
+
+        currentGameSpotIndex = nextIndex;
+        gameSpot = gameSpots[currentGameSpotIndex];
+
+        RunToGameSpot();
     }
 }

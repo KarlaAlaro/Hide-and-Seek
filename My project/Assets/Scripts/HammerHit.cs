@@ -9,6 +9,8 @@ public class HammerHit : MonoBehaviour
     public float upwardAim = 0.35f;
     public bool clearExistingVelocity = true;
     public bool logHits = true;
+      public AudioSource audioSource;
+    public AudioClip hitSound;
 
     void OnCollisionEnter(Collision collision)
     {
@@ -23,6 +25,10 @@ public class HammerHit : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        if (audioSource != null && hitSound != null)
+        {
+            audioSource.PlayOneShot(hitSound);
+        }
         if (logHits)
         {
             Debug.Log("Branch trigger touched: " + other.gameObject.name);
