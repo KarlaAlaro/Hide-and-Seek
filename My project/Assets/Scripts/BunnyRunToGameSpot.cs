@@ -9,12 +9,16 @@ public class BunnyRunToGameSpot : MonoBehaviour
     private int currentGameSpotIndex;
     public Transform lookAtTarget;
     public Animator bunnyAnimator;
+    public AudioSource bunnyAudioSource;
+    public AudioClip yoohooSound;   
     public bool runOnStart = true;
     public float arrivalDistance = 0.6f;
     public float runningVelocityThreshold = 0.05f;
     public bool faceTargetAfterArrival = true;
     public float turnSpeed = 360f;
     public float facingOffsetY = 0f;
+    private bool hasStartedWaving;
+    private bool gameHasStarted;
 
     public bool HasArrived { get; private set; }
 
@@ -46,6 +50,7 @@ public class BunnyRunToGameSpot : MonoBehaviour
         {
 
             HasArrived = false;
+            hasStartedWaving=false;
             agent.isStopped = false;
             agent.SetDestination(hit.position);
         }
@@ -84,7 +89,16 @@ public class BunnyRunToGameSpot : MonoBehaviour
         {
             bunnyAnimator.SetBool(RunningHash, isRunning);
         }
-
+        if (HasArrived && !hasStartedWaving)
+        {
+            hasStartedWaving = true;
+            bunnyAnimator.SetBool("Wave", true);
+            if (bunnyAudioSource != null && yoohooSound != null)
+            {
+                bunnyAudioSource.PlayOneShot(yoohooSound);
+            }
+        }
+       
         if (HasArrived && faceTargetAfterArrival)
         {
             FaceTarget();

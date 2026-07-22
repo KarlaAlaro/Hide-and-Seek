@@ -19,16 +19,17 @@ public class HammerHit : MonoBehaviour
             Debug.Log("Branch collided with: " + collision.gameObject.name +
                 " speed: " + collision.relativeVelocity.magnitude);
         }
+         if (audioSource != null && hitSound != null)
+        {
+            audioSource.PlayOneShot(hitSound);
+        }
 
         TryHitAcorn(collision.collider, collision.transform.position, collision.relativeVelocity.magnitude);
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if (audioSource != null && hitSound != null)
-        {
-            audioSource.PlayOneShot(hitSound);
-        }
+       
         if (logHits)
         {
             Debug.Log("Branch trigger touched: " + other.gameObject.name);

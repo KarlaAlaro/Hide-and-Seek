@@ -507,6 +507,7 @@
 "Assets/Scripts/BunnyCatchCounter.cs"
 "Assets/Scripts/BunnyProximityPlayUI.cs"
 "Assets/Scripts/BunnyRunToGameSpot.cs"
+"Assets/Scripts/BunnyWaveWhenPlayerReady.cs"
 "Assets/Scripts/DestroyOnGround.cs"
 "Assets/Scripts/ForceGrab.cs"
 "Assets/Scripts/HammerHit.cs"

@@ -23,6 +23,7 @@ public class ForceGrab : MonoBehaviour
     private bool originalUseGravity;
     private bool originalIsKinematic;
     private bool originalFreezeRotation;
+    private bool originalInteractableEnabled;
     public GameObject controllerVisual;
     public GameObject lineVisual;
 
@@ -106,6 +107,7 @@ public class ForceGrab : MonoBehaviour
             targetObject = closest;
             targetRigidbody = closest.GetComponent<Rigidbody>();
             targetInteractable = closestInteractable;
+            originalInteractableEnabled = targetInteractable != null && targetInteractable.enabled;
             originalParent = closest.transform.parent;
 
             if (targetRigidbody != null)
@@ -149,6 +151,14 @@ public class ForceGrab : MonoBehaviour
         }
     }
 
+    void LateUpdate()
+    {
+        if (isHolding && targetObject != null)
+        {
+            FollowHoldAnchor();
+        }
+    }
+
     void AttachToHand()
     {
         isPulling = false;
@@ -167,10 +177,14 @@ public class ForceGrab : MonoBehaviour
             targetRigidbody.freezeRotation = true;
         }
 
+        if (targetInteractable != null)
+        {
+            targetInteractable.enabled = false;
+        }
+
         Transform parent = holdAnchor != null ? holdAnchor : transform;
         targetObject.transform.SetParent(parent, false);
-        targetObject.transform.localPosition = heldLocalPosition;
-        targetObject.transform.localRotation = Quaternion.Euler(heldLocalEulerAngles);
+        FollowHoldAnchor();
     }
 
     void DropObject()
@@ -203,6 +217,11 @@ public class ForceGrab : MonoBehaviour
             targetRigidbody.angularVelocity = Vector3.zero;
         }
 
+        if (targetInteractable != null)
+        {
+            targetInteractable.enabled = originalInteractableEnabled;
+        }
+
         isPulling = false;
         isHolding = false;
         targetObject = null;
@@ -215,6 +234,21 @@ public class ForceGrab : MonoBehaviour
     {
         Transform parent = holdAnchor != null ? holdAnchor : transform;
         return parent.TransformPoint(heldLocalPosition);
+    }
+
+    void FollowHoldAnchor()
+    {
+        Transform parent = holdAnchor != null ? holdAnchor : transform;
+        Quaternion holdRotation = parent.rotation * Quaternion.Euler(heldLocalEulerAngles);
+        Vector3 holdPosition = parent.TransformPoint(heldLocalPosition);
+
+        targetObject.transform.SetPositionAndRotation(holdPosition, holdRotation);
+
+        if (targetRigidbody != null)
+        {
+            targetRigidbody.position = holdPosition;
+            targetRigidbody.rotation = holdRotation;
+        }
     }
 
     void MoveAboveGroundIfNeeded()
