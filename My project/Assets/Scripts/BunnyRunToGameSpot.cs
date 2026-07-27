@@ -12,6 +12,7 @@ public class BunnyRunToGameSpot : MonoBehaviour
     public AudioSource bunnyAudioSource;
     public AudioClip yoohooSound;   
     public bool runOnStart = true;
+    public bool bunnyCanMove = true;
     public float arrivalDistance = 0.6f;
     public float runningVelocityThreshold = 0.05f;
     public bool faceTargetAfterArrival = true;
@@ -125,6 +126,11 @@ public class BunnyRunToGameSpot : MonoBehaviour
     }
     public void RunToRandomGameSpot()
     {
+        if(!bunnyCanMove)
+        {
+            HasArrived = true;
+            return;
+        }
         if (gameSpots == null || gameSpots.Length == 0)
         {
             RunToGameSpot();

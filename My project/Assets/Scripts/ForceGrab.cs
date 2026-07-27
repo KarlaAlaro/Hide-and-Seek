@@ -13,6 +13,7 @@ public class ForceGrab : MonoBehaviour
     public bool keepAboveGroundOnRelease = true;
     public float groundReleaseHeight = 0.35f;
     public InputActionReference gripAction;
+    private BatPickupHint targetPickupHint;
 
     private GameObject targetObject;
     private bool isPulling = false;
@@ -107,6 +108,7 @@ public class ForceGrab : MonoBehaviour
             targetObject = closest;
             targetRigidbody = closest.GetComponent<Rigidbody>();
             targetInteractable = closestInteractable;
+            targetPickupHint = closest.GetComponentInChildren<BatPickupHint>();
             originalInteractableEnabled = targetInteractable != null && targetInteractable.enabled;
             originalParent = closest.transform.parent;
 
@@ -180,6 +182,10 @@ public class ForceGrab : MonoBehaviour
         if (targetInteractable != null)
         {
             targetInteractable.enabled = false;
+        }
+        if (targetPickupHint != null)
+        {
+            targetPickupHint.SetHeld(true);
         }
 
         Transform parent = holdAnchor != null ? holdAnchor : transform;

@@ -14,6 +14,8 @@ public class BunnyCatchCounter : MonoBehaviour
     public bool forceCatchAnimation = true;
     public AudioSource audioSource;
     public AudioClip catchSound;
+    public System.Action LevelCompleted;
+    private bool hasCompleted;
     public bool IsCelebrating { get; private set; }
     public float celebrationTime = 1.2f;
 
@@ -26,12 +28,12 @@ public class BunnyCatchCounter : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        StartCoroutine(Celebrate());
+        
         if (!other.CompareTag("Acorn"))
         {
             return;
         }
-
+        StartCoroutine(Celebrate());
         AcornReturnState acornState = other.GetComponentInParent<AcornReturnState>();
         if (acornState == null || !acornState.TryMarkCounted())
         {
@@ -52,6 +54,11 @@ public class BunnyCatchCounter : MonoBehaviour
         if (destroyCaughtAcorn)
         {
             Destroy(acornState.gameObject);
+        }
+        if (!hasCompleted && currentCatches >= catchesNeeded)
+        {
+            hasCompleted = true;
+            LevelCompleted?.Invoke();
         }
     }
 
@@ -91,5 +98,12 @@ public class BunnyCatchCounter : MonoBehaviour
         yield return new WaitForSeconds(celebrationTime);
 
         IsCelebrating = false;
+    }
+    public void ResetCounter(int newCatchesNeeded)
+    {
+        catchesNeeded = newCatchesNeeded;
+        currentCatches = 0;
+        hasCompleted = false;
+        UpdateUI();
     }
 }

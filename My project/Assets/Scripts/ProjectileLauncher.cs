@@ -15,6 +15,8 @@ public class ProjectileLauncher : MonoBehaviour
     public float firstThrowDelay = 2f;
     public float throwInterval = 2.75f;
     public float throwReleaseDelay = 0.55f;
+    public int acornsPerThrow = 1;
+    public float[] acornSpeeds;
     public Animator bunnyAnimator;
 
     private int noOfAcorns;
@@ -46,7 +48,7 @@ public class ProjectileLauncher : MonoBehaviour
             }
             SpawnAcorn();
             yield return new WaitForSeconds(throwReleaseDelay);
-            LaunchAcorn();
+            LaunchAcorns();
              throwsSinceLastMove++;
 
             if (throwsSinceLastMove >= throwsBeforeBunnyMoves)
@@ -77,40 +79,69 @@ public class ProjectileLauncher : MonoBehaviour
         }
     }
 
-    public void LaunchAcorn()
-    {   
+     public void LaunchAcorn(float speed, int acornIndex, int totalAcorns)
+    {
         if (launchPoint == null || projectile == null || player == null)
         {
             return;
         }
 
-        var _projectile = Instantiate(projectile, launchPoint.position, launchPoint.rotation);
-        AcornReturnState acornState = _projectile.GetComponent<AcornReturnState>();
+        var spawnedProjectile = Instantiate(projectile, launchPoint.position, launchPoint.rotation);
+
+        AcornReturnState acornState = spawnedProjectile.GetComponent<AcornReturnState>();
 
         if (acornState == null)
         {
-            acornState = _projectile.AddComponent<AcornReturnState>();
+            acornState = spawnedProjectile.AddComponent<AcornReturnState>();
         }
 
         acornState.ResetForLaunch();
 
-        // Get direction toward player
         Vector3 directionToPlayer = (player.position - launchPoint.position).normalized;
-        
-        // Add random angle spread
+
         float randomAngle = Random.Range(-maxSpreadAngle, maxSpreadAngle);
-        Vector3 spreadDirection = Quaternion.Euler(0, randomAngle, 0) * directionToPlayer;
-        
-        // Add slight upward arc
+
+        float formationAngle = 0f;
+        if (totalAcorns > 1)
+        {
+            float spacing = maxSpreadAngle / Mathf.Max(1, totalAcorns - 1);
+            formationAngle = -maxSpreadAngle * 0.5f + spacing * acornIndex;
+        }
+
+        Vector3 spreadDirection = Quaternion.Euler(0f, randomAngle + formationAngle, 0f) * directionToPlayer;
+
         spreadDirection.y += 0.3f;
         spreadDirection.Normalize();
-        
-        Rigidbody projectileRigidbody = _projectile.GetComponent<Rigidbody>();
+
+        Rigidbody projectileRigidbody = spawnedProjectile.GetComponent<Rigidbody>();
 
         if (projectileRigidbody != null)
         {
-            projectileRigidbody.linearVelocity = spreadDirection * launchSpeed;
+            projectileRigidbody.linearVelocity = spreadDirection * speed;
         }
-        
+    }
+    public void LaunchAcorns()
+    {
+        int count = Mathf.Max(1, acornsPerThrow);
+
+        for (int i = 0; i < count; i++)
+        {
+            float speed = GetAcornSpeed(i);
+            LaunchAcorn(speed, i, count);
+        }
+    }
+    float GetAcornSpeed(int index)
+    {
+        if (acornSpeeds == null || acornSpeeds.Length == 0)
+        {
+            return launchSpeed;
+        }
+
+        if (index < acornSpeeds.Length)
+        {
+            return acornSpeeds[index];
+        }
+
+        return acornSpeeds[acornSpeeds.Length - 1];
     }
 }

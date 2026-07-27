@@ -360,6 +360,8 @@ m_ResolvedPackages:
     - 2.11.4
     - 2.12.4
     - 2.13.3
+    - 2.13.4
+    - 2.13.5
     compatible:
     - 2.10.2
     - 2.11.2
@@ -367,6 +369,8 @@ m_ResolvedPackages:
     - 2.11.4
     - 2.12.4
     - 2.13.3
+    - 2.13.4
+    - 2.13.5
     recommended: 2.10.2
     deprecated: []
   dependencies: []
@@ -775,6 +779,7 @@ m_ResolvedPackages:
     - 1.17.0
     - 1.18.0
     - 1.19.0
+    - 1.20.0
     compatible:
     - 1.14.2
     - 1.15.0
@@ -782,6 +787,7 @@ m_ResolvedPackages:
     - 1.17.0
     - 1.18.0
     - 1.19.0
+    - 1.20.0
     recommended: 1.14.2
     deprecated: []
   dependencies:
@@ -1904,12 +1910,14 @@ m_ResolvedPackages:
     - 1.9.9
     - 1.9.10
     - 1.9.11
+    - 1.9.12
     compatible:
     - 1.9.8
     - 1.9.9
     - 1.9.10
     - 1.9.11
-    recommended: 1.9.11
+    - 1.9.12
+    recommended: 1.9.12
     deprecated:
     - 1.8.0-pre.1
   dependencies:
@@ -2377,6 +2385,7 @@ m_ResolvedPackages:
     - 1.7.3
     - 1.8.0-pre.1
     - 1.8.0
+    - 1.8.1
     - 1.9.0-pre.1
     compatible:
     - 1.7.1
@@ -2384,6 +2393,7 @@ m_ResolvedPackages:
     - 1.7.3
     - 1.8.0-pre.1
     - 1.8.0
+    - 1.8.1
     - 1.9.0-pre.1
     recommended: 1.7.3
     deprecated: []
@@ -6704,10 +6714,12 @@ m_ResolvedPackages:
     - 4.9.2
     - 4.9.3
     - 4.9.4
+    - 4.9.5
     compatible:
     - 4.9.3
     - 4.9.4
-    recommended: 4.9.4
+    - 4.9.5
+    recommended: 4.9.5
     deprecated: []
   dependencies: []
   resolvedDependencies: []
@@ -7036,13 +7048,15 @@ m_ResolvedPackages:
     - 1.8.27
     - 1.8.28
     - 1.8.29
+    - 1.8.30
     compatible:
     - 1.8.25
     - 1.8.26
     - 1.8.27
     - 1.8.28
     - 1.8.29
-    recommended: 1.8.29
+    - 1.8.30
+    recommended: 1.8.30
     deprecated: []
   dependencies:
   - name: com.unity.mathematics
