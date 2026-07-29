@@ -33,13 +33,13 @@ public class BunnyCatchCounter : MonoBehaviour
         {
             return;
         }
-        StartCoroutine(Celebrate());
+        
         AcornReturnState acornState = other.GetComponentInParent<AcornReturnState>();
         if (acornState == null || !acornState.TryMarkCounted())
         {
             return;
         }
-
+        StartCoroutine(Celebrate());
         currentCatches++;
         Debug.Log("Bunny catches: " + currentCatches);
 
@@ -47,7 +47,9 @@ public class BunnyCatchCounter : MonoBehaviour
 
         if (audioSource != null && catchSound != null)
         {
-            audioSource.PlayOneShot(catchSound);
+            audioSource.Stop();
+            audioSource.clip = catchSound;
+            audioSource.Play();
         }
         UpdateUI();
 
@@ -80,16 +82,10 @@ public class BunnyCatchCounter : MonoBehaviour
         {
             return;
         }
-
+        bunnyAnimator.SetBool("Wave", false);
         bunnyAnimator.ResetTrigger("Throw");
-        bunnyAnimator.ResetTrigger("Catch");
 
-        if (forceCatchAnimation && !string.IsNullOrEmpty(catchAnimationStateName))
-        {
-            bunnyAnimator.CrossFadeInFixedTime(catchAnimationStateName, catchAnimationFadeTime, 0, 0f);
-        }
-
-        bunnyAnimator.SetTrigger("Catch");
+        bunnyAnimator.Play("Catch");
     }
     IEnumerator Celebrate()
     {

@@ -6,7 +6,7 @@ public class HammerHit : MonoBehaviour
     public float minimumHitSpeed = 0f;
     public Transform bunny;
     public Transform returnTarget;
-    public float upwardAim = 0.35f;
+    public float upwardAim = 0.6f;
     public bool clearExistingVelocity = true;
     public bool logHits = true;
       public AudioSource audioSource;
@@ -19,7 +19,7 @@ public class HammerHit : MonoBehaviour
             Debug.Log("Branch collided with: " + collision.gameObject.name +
                 " speed: " + collision.relativeVelocity.magnitude);
         }
-         if (audioSource != null && hitSound != null)
+         if (audioSource != null && hitSound != null && collision.gameObject.name == "Acorn")
         {
             audioSource.PlayOneShot(hitSound);
         }
@@ -77,12 +77,13 @@ public class HammerHit : MonoBehaviour
 
         if (acornRb != null)
         {
-            Vector3 targetPosition = GetReturnTargetPosition();
-            Vector3 directionToBunny = targetPosition != hitPosition
-                ? (targetPosition - hitPosition).normalized
-                : transform.forward;
+            Vector3 swingDirection = transform.forward;
+            swingDirection.y = 0f;
+            swingDirection.Normalize();
+            Vector3 bunnyDirection = (GetReturnTargetPosition() - hitPosition).normalized;
 
-            directionToBunny = (directionToBunny + Vector3.up * upwardAim).normalized;
+            Vector3 finalDirection = Vector3.Lerp(swingDirection, bunnyDirection, 0.7f).normalized;
+            finalDirection = (finalDirection + Vector3.up * upwardAim).normalized;
 
             if (clearExistingVelocity)
             {
@@ -90,7 +91,7 @@ public class HammerHit : MonoBehaviour
                 acornRb.angularVelocity = Vector3.zero;
             }
 
-            acornRb.AddForce(directionToBunny * hitForce, ForceMode.Impulse);
+            acornRb.AddForce(finalDirection * hitForce, ForceMode.Impulse);
         }
 
         if (logHits)

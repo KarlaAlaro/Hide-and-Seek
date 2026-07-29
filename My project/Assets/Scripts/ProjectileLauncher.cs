@@ -8,6 +8,9 @@ public class ProjectileLauncher : MonoBehaviour
     public BunnyCatchCounter bunnyCatchCounter;
     public int throwsBeforeBunnyMoves = 3;
     private int throwsSinceLastMove;
+    private bool throwReleased;
+    private bool throwCanceled;
+
     public GameObject projectile;
     public Transform player;
     public float launchSpeed = 15f;
@@ -16,8 +19,10 @@ public class ProjectileLauncher : MonoBehaviour
     public float throwInterval = 2.75f;
     public float throwReleaseDelay = 0.55f;
     public int acornsPerThrow = 1;
+    public float throwEventTimeout = 1.5f;
     public float[] acornSpeeds;
     public Animator bunnyAnimator;
+    public BunnyFetchAcorn bunnyFetcher;
 
     private int noOfAcorns;
     private Coroutine throwLoop;
@@ -46,10 +51,37 @@ public class ProjectileLauncher : MonoBehaviour
             {
                 yield return null;
             }
+
+            while (BunnyIsFetching())
+            {
+                yield return null;
+            }
+
+            throwReleased = false;
+            throwCanceled = false;
             SpawnAcorn();
-            yield return new WaitForSeconds(throwReleaseDelay);
-            LaunchAcorns();
-             throwsSinceLastMove++;
+
+            float waitTime = 0f;
+
+            while (!throwReleased && waitTime < throwEventTimeout)
+            {
+                waitTime += Time.deltaTime;
+                yield return null;
+            }
+
+            if (!throwReleased)
+            {
+                Debug.LogWarning("Throw animation event did not fire. Launching acorn using timeout fallback.");
+                ReleaseThrownAcorns();
+            }
+
+            if (throwCanceled)
+            {
+                yield return null;
+                continue;
+            }
+
+            throwsSinceLastMove++;
 
             if (throwsSinceLastMove >= throwsBeforeBunnyMoves)
             {
@@ -75,6 +107,8 @@ public class ProjectileLauncher : MonoBehaviour
 
         if (bunnyAnimator != null)
         {
+            bunnyAnimator.SetBool("Wave", false);
+            bunnyAnimator.SetBool("Running", false);
             bunnyAnimator.SetTrigger("Throw");
         }
     }
@@ -87,6 +121,12 @@ public class ProjectileLauncher : MonoBehaviour
         }
 
         var spawnedProjectile = Instantiate(projectile, launchPoint.position, launchPoint.rotation);
+        DestroyOnGround destroyOnGround = spawnedProjectile.GetComponent<DestroyOnGround>();
+
+        if (destroyOnGround != null)
+        {
+            destroyOnGround.bunnyFetcher = bunnyFetcher;
+        }
 
         AcornReturnState acornState = spawnedProjectile.GetComponent<AcornReturnState>();
 
@@ -110,7 +150,7 @@ public class ProjectileLauncher : MonoBehaviour
 
         Vector3 spreadDirection = Quaternion.Euler(0f, randomAngle + formationAngle, 0f) * directionToPlayer;
 
-        spreadDirection.y += 0.3f;
+        spreadDirection.y += 0.35f;
         spreadDirection.Normalize();
 
         Rigidbody projectileRigidbody = spawnedProjectile.GetComponent<Rigidbody>();
@@ -143,5 +183,27 @@ public class ProjectileLauncher : MonoBehaviour
         }
 
         return acornSpeeds[acornSpeeds.Length - 1];
+    }
+    public void ReleaseThrownAcorns()
+    {
+        if (throwReleased)
+        {
+            return;
+        }
+
+        throwReleased = true;
+
+        if (BunnyIsFetching())
+        {
+            throwCanceled = true;
+            return;
+        }
+
+        LaunchAcorns();
+    }
+
+    bool BunnyIsFetching()
+    {
+        return bunnyFetcher != null && bunnyFetcher.IsFetching;
     }
 }
