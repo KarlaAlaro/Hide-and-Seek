@@ -61,6 +61,22 @@ public class BunnyFetchAcorn : MonoBehaviour
 
         StartCoroutine(FetchRoutine(acorn));
     }
+    void OnDisable()
+    {
+        StopAllCoroutines();
+        isFetching = false;
+
+        if (agent != null && agent.isOnNavMesh)
+        {
+            agent.ResetPath();
+            agent.isStopped = true;
+        }
+
+        if (bunnyAnimator != null)
+        {
+            bunnyAnimator.SetBool("Running", false);
+        }
+    }
 
     IEnumerator FetchRoutine(GameObject acorn)
     {

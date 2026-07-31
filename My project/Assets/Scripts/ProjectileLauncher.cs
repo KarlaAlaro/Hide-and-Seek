@@ -27,11 +27,6 @@ public class ProjectileLauncher : MonoBehaviour
     private int noOfAcorns;
     private Coroutine throwLoop;
 
-    void Start()
-    {
-        throwLoop = StartCoroutine(ThrowLoop());
-    }
-
     void OnDisable()
     {
         if (throwLoop != null)
@@ -40,7 +35,24 @@ public class ProjectileLauncher : MonoBehaviour
             throwLoop = null;
         }
     }
+    void OnEnable()
+    {
+        BeginThrowing();
+    }
 
+    public void BeginThrowing()
+    {
+        if (!enabled)
+        {
+            enabled = true;
+            return;
+        }
+
+        if (throwLoop == null)
+        {
+            throwLoop = StartCoroutine(ThrowLoop());
+        }
+    }
     IEnumerator ThrowLoop()
     {
         yield return new WaitForSeconds(firstThrowDelay);

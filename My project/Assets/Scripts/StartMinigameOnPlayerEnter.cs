@@ -12,7 +12,7 @@ public class StartMinigameOnPlayerEnter : MonoBehaviour
     {
         if (projectileLauncher != null)
         {
-            projectileLauncher.enabled = false;
+            //projectileLauncher.enabled = false;
         }
     }
     void OnTriggerEnter(Collider other)
@@ -47,7 +47,7 @@ public class StartMinigameOnPlayerEnter : MonoBehaviour
 
         if (projectileLauncher != null)
         {
-            projectileLauncher.enabled = true;
+            //projectileLauncher.enabled = true;
         }
     }
 }

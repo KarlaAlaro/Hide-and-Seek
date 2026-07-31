@@ -186,3 +186,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84c0f60e0a5724f3fb2ab04ae00d2ab5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyOnGround
+  bunnyFetcher: {fileID: 0}
+  destroyIfNotFetchedAfter: 5
+  player: {fileID: 0}
+  disappearNearPlayerDistance: 2
+  freezeNearBunnyDistance: 5

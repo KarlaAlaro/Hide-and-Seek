@@ -6,8 +6,7 @@
   "inputs": [
     "/Users/karlaalaro/Hide-and-Seek/My project/Packages/manifest.json",
     "/Users/karlaalaro/Hide-and-Seek/My project/Packages/packages-lock.json",
-    "/Applications/Unity/Hub/Editor/6000.2.13f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/BuiltInPackagesCombined.sha1",
-    "/Users/karlaalaro/Hide-and-Seek/My project/Assets/SteamVR/OpenVRUnityXRPackage/Editor/com.valvesoftware.unity.openvr-1.2.1.tgz"
+    "/Applications/Unity/Hub/Editor/6000.2.13f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/BuiltInPackagesCombined.sha1"
   ],
   "outputs": {
     "com.unity.2d.sprite@1.0.0": {
@@ -208,16 +207,6 @@
       "editorCompatibility": "2022.3.0a1",
       "version": "1.16.1",
       "source": "registry",
-      "testable": false
-    },
-    "com.valvesoftware.unity.openvr@file:/Users/karlaalaro/Hide-and-Seek/My project/Assets/SteamVR/OpenVRUnityXRPackage/Editor/com.valvesoftware.unity.openvr-1.2.1.tgz": {
-      "name": "com.valvesoftware.unity.openvr",
-      "displayName": "OpenVR XR Plugin",
-      "resolvedPath": "/Users/karlaalaro/Hide-and-Seek/My project/Library/PackageCache/com.valvesoftware.unity.openvr@970ac47786c4",
-      "fingerprint": "970ac47786c43348c742a3dfcdae5c8e",
-      "editorCompatibility": "2019.4.0a1",
-      "version": "1.2.1",
-      "source": "local-tarball",
       "testable": false
     },
     "com.unity.modules.accessibility@1.0.0": {
@@ -492,16 +481,6 @@
       "source": "builtin",
       "testable": false
     },
-    "com.unity.xr.legacyinputhelpers@2.1.12": {
-      "name": "com.unity.xr.legacyinputhelpers",
-      "displayName": "XR Legacy Input Helpers",
-      "resolvedPath": "/Users/karlaalaro/Hide-and-Seek/My project/Library/PackageCache/com.unity.xr.legacyinputhelpers@b7579e86f3b4",
-      "fingerprint": "b7579e86f3b456c909fda6b875fba7ab1eeb1322",
-      "editorCompatibility": "2019.4.0a1",
-      "version": "2.1.12",
-      "source": "registry",
-      "testable": false
-    },
     "com.unity.xr.core-utils@2.5.3": {
       "name": "com.unity.xr.core-utils",
       "displayName": "XR Core Utilities",
@@ -509,6 +488,16 @@
       "fingerprint": "f0450cbac8d66beb614cb1b4241eae977ee9990e",
       "editorCompatibility": "2021.3.0f1",
       "version": "2.5.3",
+      "source": "registry",
+      "testable": false
+    },
+    "com.unity.xr.legacyinputhelpers@2.1.12": {
+      "name": "com.unity.xr.legacyinputhelpers",
+      "displayName": "XR Legacy Input Helpers",
+      "resolvedPath": "/Users/karlaalaro/Hide-and-Seek/My project/Library/PackageCache/com.unity.xr.legacyinputhelpers@b7579e86f3b4",
+      "fingerprint": "b7579e86f3b456c909fda6b875fba7ab1eeb1322",
+      "editorCompatibility": "2019.4.0a1",
+      "version": "2.1.12",
       "source": "registry",
       "testable": false
     },

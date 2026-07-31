@@ -13,6 +13,8 @@ public class ForceGrab : MonoBehaviour
     public bool keepAboveGroundOnRelease = true;
     public float groundReleaseHeight = 0.35f;
     public InputActionReference gripAction;
+    public ProjectileLauncher projectileLauncher;
+    private bool hasStartedMinigame;    
     private BatPickupHint targetPickupHint;
 
     private GameObject targetObject;
@@ -58,7 +60,7 @@ public class ForceGrab : MonoBehaviour
     {
         if (isHolding)
         {
-            DropObject();
+            return;
         }
         else if (!isPulling)
         {
@@ -121,8 +123,12 @@ public class ForceGrab : MonoBehaviour
                 // Take physics control while the object is being pulled to the hand.
                 targetRigidbody.useGravity = false;
                 targetRigidbody.isKinematic = true;
-                targetRigidbody.linearVelocity = Vector3.zero;
-                targetRigidbody.angularVelocity = Vector3.zero;
+                if(!targetRigidbody.isKinematic)
+                {
+                    targetRigidbody.linearVelocity = Vector3.zero;
+                    targetRigidbody.angularVelocity = Vector3.zero;
+                }
+                
                 targetRigidbody.freezeRotation = true;
             }
 
@@ -174,8 +180,12 @@ public class ForceGrab : MonoBehaviour
         {
             targetRigidbody.useGravity = false;
             targetRigidbody.isKinematic = true;
-            targetRigidbody.linearVelocity = Vector3.zero;
-            targetRigidbody.angularVelocity = Vector3.zero;
+            if(!targetRigidbody.isKinematic)
+            {
+                targetRigidbody.linearVelocity = Vector3.zero;
+                targetRigidbody.angularVelocity = Vector3.zero;
+            }
+            
             targetRigidbody.freezeRotation = true;
         }
 
@@ -186,6 +196,11 @@ public class ForceGrab : MonoBehaviour
         if (targetPickupHint != null)
         {
             targetPickupHint.SetHeld(true);
+        }
+        if (!hasStartedMinigame && projectileLauncher != null)
+        {
+            hasStartedMinigame = true;
+            projectileLauncher.BeginThrowing();
         }
 
         Transform parent = holdAnchor != null ? holdAnchor : transform;
@@ -219,8 +234,12 @@ public class ForceGrab : MonoBehaviour
             targetRigidbody.useGravity = originalUseGravity;
             targetRigidbody.isKinematic = originalIsKinematic;
             targetRigidbody.freezeRotation = originalFreezeRotation;
-            targetRigidbody.linearVelocity = Vector3.zero;
-            targetRigidbody.angularVelocity = Vector3.zero;
+
+            if (!targetRigidbody.isKinematic)
+            {
+                targetRigidbody.linearVelocity = Vector3.zero;
+                targetRigidbody.angularVelocity = Vector3.zero;
+            }
         }
 
         if (targetInteractable != null)

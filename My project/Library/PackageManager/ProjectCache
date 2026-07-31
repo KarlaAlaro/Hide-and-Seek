@@ -5,34 +5,20 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 639198661400000000
-    m_Hash: 2597428718
+      ticks: 639209103270000000
+    m_Hash: 1645687165
   m_LockFileStatus:
     m_FilePath: /Users/karlaalaro/Hide-and-Seek/My project/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 639198661400000000
-    m_Hash: 1295178163
+      ticks: 639209103300000000
+    m_Hash: 4203913262
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
-  m_LocalFileStatus:
-  - m_FilePath: /Users/karlaalaro/Hide-and-Seek/My project/Assets/SteamVR/OpenVRUnityXRPackage/Editor/com.valvesoftware.unity.openvr-1.2.1.tgz/package.json
-    m_PathExists: 0
-    m_ContentTrackingEnabled: 1
-    m_ModificationDate:
-      serializedVersion: 2
-      ticks: 0
-    m_Hash: 0
-  - m_FilePath: /Users/karlaalaro/Hide-and-Seek/My project/Assets/SteamVR/OpenVRUnityXRPackage/Editor/com.valvesoftware.unity.openvr-1.2.1.tgz
-    m_PathExists: 1
-    m_ContentTrackingEnabled: 1
-    m_ModificationDate:
-      serializedVersion: 2
-      ticks: 638411198350000000
-    m_Hash: 4235084898
+  m_LocalFileStatus: []
 m_ProjectPath: /Users/karlaalaro/Hide-and-Seek/My project/Packages
 m_EditorVersion: 6000.2.13f1 (abdb44fca7f7)
 m_ResolvedPackages:
@@ -3133,121 +3119,6 @@ m_ResolvedPackages:
       scopePatternExpression: 
       message: 
       readMoreLink: 
-- packageId: com.valvesoftware.unity.openvr@file:/Users/karlaalaro/Hide-and-Seek/My
-    project/Assets/SteamVR/OpenVRUnityXRPackage/Editor/com.valvesoftware.unity.openvr-1.2.1.tgz
-  testable: 0
-  isDirectDependency: 1
-  version: 1.2.1
-  source: 6
-  resolvedPath: /Users/karlaalaro/Hide-and-Seek/My project/Library/PackageCache/com.valvesoftware.unity.openvr@970ac47786c4
-  assetPath: Packages/com.valvesoftware.unity.openvr
-  name: com.valvesoftware.unity.openvr
-  displayName: OpenVR XR Plugin
-  author:
-    name: Valve Corporation
-    email: 
-    url: 
-  category: 
-  type: 
-  description: 'Provides rendering support for OpenVR devices in Unity XR. For input
-    please see: https://github.com/ValveSoftware/steamvr_unity_plugin'
-  errors: []
-  versions:
-    all: []
-    compatible: []
-    recommended: 
-    deprecated: []
-  dependencies:
-  - name: com.unity.xr.management
-    version: 3.2.13
-  - name: com.unity.ugui
-    version: 1.0.0
-  - name: com.unity.xr.legacyinputhelpers
-    version: 2.1.4
-  resolvedDependencies:
-  - name: com.unity.xr.management
-    version: 4.6.0
-  - name: com.unity.modules.xr
-    version: 1.0.0
-  - name: com.unity.modules.physics
-    version: 1.0.0
-  - name: com.unity.modules.jsonserialize
-    version: 1.0.0
-  - name: com.unity.modules.subsystems
-    version: 1.0.0
-  - name: com.unity.xr.core-utils
-    version: 2.5.3
-  - name: com.unity.xr.legacyinputhelpers
-    version: 2.1.12
-  - name: com.unity.modules.vr
-    version: 1.0.0
-  - name: com.unity.ugui
-    version: 2.0.0
-  - name: com.unity.modules.ui
-    version: 1.0.0
-  - name: com.unity.modules.imgui
-    version: 1.0.0
-  keywords:
-  - openvr
-  - xr
-  - virtual
-  - reality
-  - xreditorsubsystem
-  - xrsdk
-  - steamvr
-  - vr
-  - unity
-  - sdk
-  - valve
-  registry:
-    id: main
-    name: 
-    url: https://packages.unity.com
-    scopes: []
-    isDefault: 1
-    capabilities: 7
-    configSource: 0
-    compliance:
-      status: 0
-      violations: []
-  hideInEditor: 0
-  entitlements:
-    licensingModel: 0
-  isAssetStorePackage: 0
-  datePublishedTicks: 0
-  documentationUrl: 
-  hasRepository: 0
-  repository:
-    type: 
-    url: 
-    revision: 
-    path: 
-  unityLifecycle:
-    version: 
-    nextVersion: 
-    recommendedVersion: 
-    isDeprecated: 0
-    deprecationMessage: 
-    isDiscoverable: 0
-  isDeprecated: 0
-  deprecationMessage: 
-  git:
-    hash: 
-    revision: 
-  upmReserved: 
-  assetStore:
-    productId: 
-  fingerprint: 970ac47786c43348c742a3dfcdae5c8e
-  editorCompatibility:
-    compatibilityLevel: 0
-    minimumPackageVersion: 
-    minimumUnityVersion: 2019.4.0a1
-  compliance:
-    status: 0
-    violation:
-      scopePatternExpression: 
-      message: 
-      readMoreLink: 
 - packageId: com.unity.modules.accessibility@1.0.0
   testable: 0
   isDirectDependency: 1
@@ -6013,6 +5884,138 @@ m_ResolvedPackages:
       scopePatternExpression: 
       message: 
       readMoreLink: 
+- packageId: com.unity.xr.core-utils@2.5.3
+  testable: 0
+  isDirectDependency: 0
+  version: 2.5.3
+  source: 1
+  resolvedPath: /Users/karlaalaro/Hide-and-Seek/My project/Library/PackageCache/com.unity.xr.core-utils@f0450cbac8d6
+  assetPath: Packages/com.unity.xr.core-utils
+  name: com.unity.xr.core-utils
+  displayName: XR Core Utilities
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: 
+  description: "Common utility classes for XR projects\nRefer to API documentation
+    for details. Some particularly useful utilities include:\n\u25AA Geometry Utilities\n 
+    \u25AA Point of closest approach\n  \u25AA Closest edge of a polygon\n  \u25AA
+    Check if point inside of polygon\n  \u25AA Compute 2D convex hull\n\u25AA Collection
+    pool\n\u25AA Math Utilities\n  \u25AA Bounds extensions\n  \u25AA Quaternion
+    extensions\n\u25AA Editor GUI\n  \u25AA Flags Property Drawer\n\u25AA Scriptable
+    Settings (serialized project settings)\n\u25AA Conditional Compilation Utility\n\u25AA
+    XR Origin Implementation"
+  errors: []
+  versions:
+    all:
+    - 2.0.0-pre.3
+    - 2.0.0-pre.5
+    - 2.0.0-pre.6
+    - 2.0.0
+    - 2.0.1
+    - 2.1.0-pre.1
+    - 2.1.0
+    - 2.1.1
+    - 2.2.0-pre.1
+    - 2.2.0-pre.2
+    - 2.2.0
+    - 2.2.1
+    - 2.2.2
+    - 2.2.3
+    - 2.3.0-pre.1
+    - 2.3.0-pre.2
+    - 2.3.0-pre.3
+    - 2.3.0
+    - 2.4.0-exp.1
+    - 2.4.0-exp.2
+    - 2.4.0-exp.3
+    - 2.4.0
+    - 2.5.0
+    - 2.5.1
+    - 2.5.2
+    - 2.5.3
+    - 2.6.0-pre.1
+    - 2.6.0-pre.2
+    - 2.6.0
+    compatible:
+    - 2.5.3
+    - 2.6.0-pre.1
+    - 2.6.0-pre.2
+    - 2.6.0
+    recommended: 2.5.3
+    deprecated: []
+  dependencies:
+  - name: com.unity.modules.xr
+    version: 1.0.0
+  resolvedDependencies:
+  - name: com.unity.modules.xr
+    version: 1.0.0
+  - name: com.unity.modules.physics
+    version: 1.0.0
+  - name: com.unity.modules.jsonserialize
+    version: 1.0.0
+  - name: com.unity.modules.subsystems
+    version: 1.0.0
+  keywords:
+  - xr
+  - ar
+  - augmented
+  - reality
+  - utility
+  - utilities
+  - core
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+    compliance:
+      status: 0
+      violations: []
+  hideInEditor: 1
+  entitlements:
+    licensingModel: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 638924605331920000
+  documentationUrl: https://docs.unity3d.com/Packages/com.unity.xr.core-utils@2.5/manual/index.html
+  hasRepository: 1
+  repository:
+    type: git
+    url: https://github.cds.internal.unity3d.com/unity/com.unity.xr.core-utils.git
+    revision: 086a50c8cec1477b45e7e5c90669cf2f5a9818dc
+    path: 
+  unityLifecycle:
+    version: 2.5.3
+    nextVersion: 
+    recommendedVersion: 
+    isDeprecated: 0
+    deprecationMessage: 
+    isDiscoverable: 0
+  isDeprecated: 0
+  deprecationMessage: 
+  git:
+    hash: 
+    revision: 
+  upmReserved: '{"changelog":"### Fixed\n\n- Fixed potential `NullReferenceException`
+    in internal analytics code when getting the package version."}'
+  assetStore:
+    productId: 
+  fingerprint: f0450cbac8d66beb614cb1b4241eae977ee9990e
+  editorCompatibility:
+    compatibilityLevel: 0
+    minimumPackageVersion: 2.5.3
+    minimumUnityVersion: 2021.3.0f1
+  compliance:
+    status: 0
+    violation:
+      scopePatternExpression: 
+      message: 
+      readMoreLink: 
 - packageId: com.unity.xr.legacyinputhelpers@2.1.12
   testable: 0
   isDirectDependency: 0
@@ -6141,138 +6144,6 @@ m_ResolvedPackages:
     compatibilityLevel: 0
     minimumPackageVersion: 2.1.12
     minimumUnityVersion: 2019.4.0a1
-  compliance:
-    status: 0
-    violation:
-      scopePatternExpression: 
-      message: 
-      readMoreLink: 
-- packageId: com.unity.xr.core-utils@2.5.3
-  testable: 0
-  isDirectDependency: 0
-  version: 2.5.3
-  source: 1
-  resolvedPath: /Users/karlaalaro/Hide-and-Seek/My project/Library/PackageCache/com.unity.xr.core-utils@f0450cbac8d6
-  assetPath: Packages/com.unity.xr.core-utils
-  name: com.unity.xr.core-utils
-  displayName: XR Core Utilities
-  author:
-    name: 
-    email: 
-    url: 
-  category: 
-  type: 
-  description: "Common utility classes for XR projects\nRefer to API documentation
-    for details. Some particularly useful utilities include:\n\u25AA Geometry Utilities\n 
-    \u25AA Point of closest approach\n  \u25AA Closest edge of a polygon\n  \u25AA
-    Check if point inside of polygon\n  \u25AA Compute 2D convex hull\n\u25AA Collection
-    pool\n\u25AA Math Utilities\n  \u25AA Bounds extensions\n  \u25AA Quaternion
-    extensions\n\u25AA Editor GUI\n  \u25AA Flags Property Drawer\n\u25AA Scriptable
-    Settings (serialized project settings)\n\u25AA Conditional Compilation Utility\n\u25AA
-    XR Origin Implementation"
-  errors: []
-  versions:
-    all:
-    - 2.0.0-pre.3
-    - 2.0.0-pre.5
-    - 2.0.0-pre.6
-    - 2.0.0
-    - 2.0.1
-    - 2.1.0-pre.1
-    - 2.1.0
-    - 2.1.1
-    - 2.2.0-pre.1
-    - 2.2.0-pre.2
-    - 2.2.0
-    - 2.2.1
-    - 2.2.2
-    - 2.2.3
-    - 2.3.0-pre.1
-    - 2.3.0-pre.2
-    - 2.3.0-pre.3
-    - 2.3.0
-    - 2.4.0-exp.1
-    - 2.4.0-exp.2
-    - 2.4.0-exp.3
-    - 2.4.0
-    - 2.5.0
-    - 2.5.1
-    - 2.5.2
-    - 2.5.3
-    - 2.6.0-pre.1
-    - 2.6.0-pre.2
-    - 2.6.0
-    compatible:
-    - 2.5.3
-    - 2.6.0-pre.1
-    - 2.6.0-pre.2
-    - 2.6.0
-    recommended: 2.5.3
-    deprecated: []
-  dependencies:
-  - name: com.unity.modules.xr
-    version: 1.0.0
-  resolvedDependencies:
-  - name: com.unity.modules.xr
-    version: 1.0.0
-  - name: com.unity.modules.physics
-    version: 1.0.0
-  - name: com.unity.modules.jsonserialize
-    version: 1.0.0
-  - name: com.unity.modules.subsystems
-    version: 1.0.0
-  keywords:
-  - xr
-  - ar
-  - augmented
-  - reality
-  - utility
-  - utilities
-  - core
-  registry:
-    id: main
-    name: 
-    url: https://packages.unity.com
-    scopes: []
-    isDefault: 1
-    capabilities: 7
-    configSource: 0
-    compliance:
-      status: 0
-      violations: []
-  hideInEditor: 1
-  entitlements:
-    licensingModel: 1
-  isAssetStorePackage: 0
-  datePublishedTicks: 638924605331920000
-  documentationUrl: https://docs.unity3d.com/Packages/com.unity.xr.core-utils@2.5/manual/index.html
-  hasRepository: 1
-  repository:
-    type: git
-    url: https://github.cds.internal.unity3d.com/unity/com.unity.xr.core-utils.git
-    revision: 086a50c8cec1477b45e7e5c90669cf2f5a9818dc
-    path: 
-  unityLifecycle:
-    version: 2.5.3
-    nextVersion: 
-    recommendedVersion: 
-    isDeprecated: 0
-    deprecationMessage: 
-    isDiscoverable: 0
-  isDeprecated: 0
-  deprecationMessage: 
-  git:
-    hash: 
-    revision: 
-  upmReserved: '{"changelog":"### Fixed\n\n- Fixed potential `NullReferenceException`
-    in internal analytics code when getting the package version."}'
-  assetStore:
-    productId: 
-  fingerprint: f0450cbac8d66beb614cb1b4241eae977ee9990e
-  editorCompatibility:
-    compatibilityLevel: 0
-    minimumPackageVersion: 2.5.3
-    minimumUnityVersion: 2021.3.0f1
   compliance:
     status: 0
     violation:

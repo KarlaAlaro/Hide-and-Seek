@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit.Inputs.Haptics;
 
 public class HammerHit : MonoBehaviour
 {
@@ -9,8 +10,16 @@ public class HammerHit : MonoBehaviour
     public float upwardAim = 0.6f;
     public bool clearExistingVelocity = true;
     public bool logHits = true;
-      public AudioSource audioSource;
+    public AudioSource audioSource;
     public AudioClip hitSound;
+    public AudioClip bunnyHitSound;
+    public float bunnyHitSoundCooldown = 0.4f;
+    private float nextBunnyHitSoundTime;
+
+
+    public HapticImpulsePlayer hapticImpulsePlayer;
+    public float hapticAmplitude = 0.7f;
+    public float hapticDuration = 0.08f;
 
     void OnCollisionEnter(Collision collision)
     {
@@ -19,22 +28,18 @@ public class HammerHit : MonoBehaviour
             Debug.Log("Branch collided with: " + collision.gameObject.name +
                 " speed: " + collision.relativeVelocity.magnitude);
         }
-         if (audioSource != null && hitSound != null && collision.gameObject.name == "Acorn")
-        {
-            audioSource.PlayOneShot(hitSound);
-        }
-
+        TryPlayBunnyHitSound(collision.collider);
         TryHitAcorn(collision.collider, collision.transform.position, collision.relativeVelocity.magnitude);
     }
 
     void OnTriggerEnter(Collider other)
     {
-       
         if (logHits)
         {
             Debug.Log("Branch trigger touched: " + other.gameObject.name);
         }
 
+        TryPlayBunnyHitSound(other);
         TryHitAcorn(other, other.transform.position, minimumHitSpeed);
     }
 
@@ -61,6 +66,13 @@ public class HammerHit : MonoBehaviour
         if (acornState != null)
         {
             acornState.MarkHitBack();
+        }
+
+        PlayHitSound();
+
+        if (hapticImpulsePlayer != null)
+        {
+            hapticImpulsePlayer.SendHapticImpulse(hapticAmplitude, hapticDuration);
         }
 
         Rigidbody acornRb = hitCollider.attachedRigidbody;
@@ -120,5 +132,34 @@ public class HammerHit : MonoBehaviour
         }
 
         return transform.position + transform.forward;
+    }
+
+    void PlayHitSound()
+    {
+        if (audioSource != null && hitSound != null)
+        {
+            audioSource.PlayOneShot(hitSound);
+        }
+    }
+
+    void TryPlayBunnyHitSound(Collider hitCollider)
+    {
+        if (hitCollider == null || bunny == null || audioSource == null || bunnyHitSound == null)
+        {
+            return;
+        }
+
+        if (!hitCollider.transform.IsChildOf(bunny))
+        {
+            return;
+        }
+
+        if (Time.time < nextBunnyHitSoundTime)
+        {
+            return;
+        }
+
+        nextBunnyHitSoundTime = Time.time + bunnyHitSoundCooldown;
+        audioSource.PlayOneShot(bunnyHitSound);
     }
 }

@@ -3,7 +3,6 @@
     "rootNamespace": "",
     "references": [
         "SteamVR_Windows_EditorHelper",
-        "Unity.XR.OpenVR",
         "UnityEngine.SpatialTracking"
     ],
     "includePlatforms": [],
@@ -14,13 +13,10 @@
     "overrideReferences": false,
     "precompiledReferences": [],
     "autoReferenced": true,
-    "defineConstraints": [],
+    "defineConstraints": [
+        "STEAMVR_ENABLED"
+    ],
     "versionDefines": [
-        {
-            "name": "com.valvesoftware.unity.openvr",
-            "expression": "",
-            "define": "OPENVR_XR_API"
-        },
         {
             "name": "com.unity.xr.legacyinputhelpers",
             "expression": "",

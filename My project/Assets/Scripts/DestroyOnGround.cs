@@ -6,6 +6,9 @@ public class DestroyOnGround : MonoBehaviour
     public float destroyIfNotFetchedAfter = 8f;
 
     private bool hasLanded;
+    public Transform player;
+    public float disappearNearPlayerDistance = 2f;
+    public float freezeNearBunnyDistance = 10f;
 
     void OnCollisionEnter(Collision collision)
     {
@@ -18,8 +21,20 @@ public class DestroyOnGround : MonoBehaviour
         {
             return;
         }
+         hasLanded = true;
+        if (player != null && Vector3.Distance(transform.position, player.position) < disappearNearPlayerDistance)
+        {
+            Destroy(gameObject);
+            return;
+        }
 
-        hasLanded = true;
+        if (bunnyFetcher != null && Vector3.Distance(transform.position, bunnyFetcher.transform.position) > freezeNearBunnyDistance)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+       
         AcornReturnState acornState = GetComponent<AcornReturnState>();
 
         if (acornState != null)
