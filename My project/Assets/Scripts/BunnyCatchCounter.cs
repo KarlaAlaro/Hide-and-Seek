@@ -14,6 +14,7 @@ public class BunnyCatchCounter : MonoBehaviour
     public bool forceCatchAnimation = true;
     public AudioSource audioSource;
     public AudioClip catchSound;
+    public PlayerPerformanceTracker performanceTracker;
     public System.Action LevelCompleted;
     private bool hasCompleted;
     public bool IsCelebrating { get; private set; }
@@ -41,6 +42,11 @@ public class BunnyCatchCounter : MonoBehaviour
         }
         StartCoroutine(Celebrate());
         currentCatches++;
+        if (performanceTracker != null)
+        {
+            performanceTracker.RecordCatch();
+        }
+
         Debug.Log("Bunny catches: " + currentCatches);
 
         PlayCatchReaction();

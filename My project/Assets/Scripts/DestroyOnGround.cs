@@ -3,6 +3,7 @@ using UnityEngine;
 public class DestroyOnGround : MonoBehaviour
 {
     public BunnyFetchAcorn bunnyFetcher;
+    public PlayerPerformanceTracker performanceTracker;
     public float destroyIfNotFetchedAfter = 8f;
 
     private bool hasLanded;
@@ -22,6 +23,8 @@ public class DestroyOnGround : MonoBehaviour
             return;
         }
          hasLanded = true;
+        RecordMissIfNeeded();
+
         if (player != null && Vector3.Distance(transform.position, player.position) < disappearNearPlayerDistance)
         {
             Destroy(gameObject);
@@ -57,5 +60,22 @@ public class DestroyOnGround : MonoBehaviour
         }
 
         Destroy(gameObject, destroyIfNotFetchedAfter);
+    }
+
+    void RecordMissIfNeeded()
+    {
+        if (performanceTracker == null)
+        {
+            return;
+        }
+
+        AcornReturnState acornState = GetComponent<AcornReturnState>();
+
+        if (acornState != null && acornState.HasBeenCounted)
+        {
+            return;
+        }
+
+        performanceTracker.RecordMiss();
     }
 }

@@ -23,6 +23,7 @@ public class ProjectileLauncher : MonoBehaviour
     public float[] acornSpeeds;
     public Animator bunnyAnimator;
     public BunnyFetchAcorn bunnyFetcher;
+    public PlayerPerformanceTracker performanceTracker;
 
     private int noOfAcorns;
     private Coroutine throwLoop;
@@ -138,6 +139,7 @@ public class ProjectileLauncher : MonoBehaviour
         if (destroyOnGround != null)
         {
             destroyOnGround.bunnyFetcher = bunnyFetcher;
+            destroyOnGround.performanceTracker = performanceTracker;
         }
 
         AcornReturnState acornState = spawnedProjectile.GetComponent<AcornReturnState>();
@@ -175,6 +177,10 @@ public class ProjectileLauncher : MonoBehaviour
     public void LaunchAcorns()
     {
         int count = Mathf.Max(1, acornsPerThrow);
+        if (performanceTracker != null)
+        {
+            performanceTracker.RecordThrow(count);
+        }
 
         for (int i = 0; i < count; i++)
         {
@@ -217,5 +223,10 @@ public class ProjectileLauncher : MonoBehaviour
     bool BunnyIsFetching()
     {
         return bunnyFetcher != null && bunnyFetcher.IsFetching;
+    }
+
+    public void ResetMovementThrowCounter()
+    {
+        throwsSinceLastMove = 0;
     }
 }
