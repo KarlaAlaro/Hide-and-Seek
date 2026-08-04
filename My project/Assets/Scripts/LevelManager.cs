@@ -25,6 +25,7 @@ public class LevelManager : MonoBehaviour
     public bool adaptDifficultyToPerformance = true;
     public int resolvedAcornsBeforeAdjustment = 4;
     public float strugglingAccuracy = 0.45f;
+    public ParticipantSessionLogger sessionLogger;
     public float thrivingAccuracy = 0.75f;
     public int catchStreakForHarderMode = 3;
     public int maxAdaptiveSteps = 2;

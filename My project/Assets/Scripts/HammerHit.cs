@@ -7,6 +7,7 @@ public class HammerHit : MonoBehaviour
     public float minimumHitSpeed = 0f;
     public Transform bunny;
     public Transform returnTarget;
+    public PlayerPerformanceTracker performanceTracker;
     public float upwardAim = 0.6f;
     public bool clearExistingVelocity = true;
     public bool logHits = true;
@@ -20,6 +21,39 @@ public class HammerHit : MonoBehaviour
     public HapticImpulsePlayer hapticImpulsePlayer;
     public float hapticAmplitude = 0.7f;
     public float hapticDuration = 0.08f;
+    public float swingSpeedThreshold = 2.5f;
+    public float swingCooldown = 0.5f;
+
+    private Vector3 lastPosition;
+    private float nextSwingTime;
+
+    void Start()
+    {
+        lastPosition = transform.position;
+    }
+
+    void Update()
+    {
+        if (Time.deltaTime <= 0f)
+        {
+            return;
+        }
+
+        float swingSpeed = Vector3.Distance(transform.position, lastPosition) / Time.deltaTime;
+        lastPosition = transform.position;
+
+        if (swingSpeed < swingSpeedThreshold || Time.time < nextSwingTime)
+        {
+            return;
+        }
+
+        nextSwingTime = Time.time + swingCooldown;
+
+        if (performanceTracker != null)
+        {
+            performanceTracker.RecordBatSwing();
+        }
+    }
 
     void OnCollisionEnter(Collision collision)
     {
@@ -52,7 +86,10 @@ public class HammerHit : MonoBehaviour
         {
             return;
         }
-
+        if (performanceTracker != null)
+        {
+            performanceTracker.RecordAcornHitAttempt();
+        }
         if (hitSpeed < minimumHitSpeed)
         {
             if (logHits)
@@ -61,6 +98,10 @@ public class HammerHit : MonoBehaviour
             }
 
             return;
+        }
+        if (performanceTracker != null)
+        {
+            performanceTracker.RecordSuccessfulAcornHit();
         }
 
         if (acornState != null)

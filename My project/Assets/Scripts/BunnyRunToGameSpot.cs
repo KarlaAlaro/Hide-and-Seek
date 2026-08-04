@@ -10,7 +10,9 @@ public class BunnyRunToGameSpot : MonoBehaviour
     public Transform lookAtTarget;
     public Animator bunnyAnimator;
     public AudioSource bunnyAudioSource;
-    public AudioClip yoohooSound;   
+    public AudioClip yoohooSound;
+    public AudioClip cmonSound;
+    public float cmonSoundChance = 0.25f;   
     public bool runOnStart = true;
     public bool bunnyCanMove = true;
     public float arrivalDistance = 0.6f;
@@ -95,9 +97,13 @@ public class BunnyRunToGameSpot : MonoBehaviour
             hasStartedWaving = true;
             bunnyAnimator.SetBool("Wave", true);
             if (bunnyAudioSource != null && yoohooSound != null)
-            {
-                bunnyAudioSource.PlayOneShot(yoohooSound);
-            }
+        {
+            AudioClip clipToPlay = cmonSound != null && Random.value < cmonSoundChance
+                ? cmonSound
+                : yoohooSound;
+
+            bunnyAudioSource.PlayOneShot(clipToPlay);
+        }
         }
        
         if (HasArrived && faceTargetAfterArrival)

@@ -10,6 +10,7 @@ public class ExperienceTimer : MonoBehaviour
     private bool timerRunning;
     private bool hasEnded;
     public ProjectileLauncher projectileLauncher;
+    public ParticipantSessionLogger sessionLogger;
 
 
     void Start()
@@ -17,6 +18,10 @@ public class ExperienceTimer : MonoBehaviour
         timeRemaining = experienceLength;
         timerRunning = true;
         Debug.Log(timerRunning);
+        if (sessionLogger != null && sessionLogger.performanceTracker != null)
+    {
+        sessionLogger.performanceTracker.StartParticipantSession();
+    }
     }
 
     void Update()
@@ -43,6 +48,10 @@ public class ExperienceTimer : MonoBehaviour
         timerRunning = false;
         Debug.Log("Time is up");
         projectileLauncher.enabled = false;
+        if (sessionLogger != null)
+        {
+            sessionLogger.SaveParticipantRow();
+        }
         endingCelebration.StartCelebration();
     }
 }
