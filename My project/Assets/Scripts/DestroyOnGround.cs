@@ -1,7 +1,10 @@
+using System.Collections;
 using UnityEngine;
 
 public class DestroyOnGround : MonoBehaviour
 {
+    private const float MinimumGroundNormalY = 0.5f;
+
     public BunnyFetchAcorn bunnyFetcher;
     public PlayerPerformanceTracker performanceTracker;
     public float destroyIfNotFetchedAfter = 8f;
@@ -13,19 +16,21 @@ public class DestroyOnGround : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (hasLanded)
+        if (hasLanded || !IsGroundContact(collision))
         {
             return;
         }
 
-        if (!collision.gameObject.CompareTag("Ground"))
-        {
-            return;
-        }
-         hasLanded = true;
+        hasLanded = true;
         RecordMissIfNeeded();
 
-        if (player != null && Vector3.Distance(transform.position, player.position) < disappearNearPlayerDistance)
+        float playerClearanceDistance = disappearNearPlayerDistance;
+        if (bunnyFetcher != null)
+        {
+            playerClearanceDistance = Mathf.Max(playerClearanceDistance, bunnyFetcher.minDistanceFromPlayer);
+        }
+
+        if (player != null && Vector3.Distance(transform.position, player.position) < playerClearanceDistance)
         {
             Destroy(gameObject);
             return;
@@ -37,7 +42,6 @@ public class DestroyOnGround : MonoBehaviour
             return;
         }
 
-       
         AcornReturnState acornState = GetComponent<AcornReturnState>();
 
         if (acornState != null)
@@ -50,7 +54,7 @@ public class DestroyOnGround : MonoBehaviour
         {
             rb.linearVelocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
-            rb.useGravity = true;
+            rb.useGravity = false;
             rb.isKinematic = true;
         }
 
@@ -59,7 +63,55 @@ public class DestroyOnGround : MonoBehaviour
             bunnyFetcher.TryFetchAcorn(gameObject);
         }
 
-        Destroy(gameObject, destroyIfNotFetchedAfter);
+        StartCoroutine(DestroyAfterDelay());
+    }
+
+    IEnumerator DestroyAfterDelay()
+    {
+        yield return new WaitForSeconds(destroyIfNotFetchedAfter);
+
+        AcornReturnState acornState = GetComponent<AcornReturnState>();
+        while (acornState != null && acornState.IsBeingFetched)
+        {
+            yield return null;
+        }
+
+        if (gameObject != null)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    bool IsGroundContact(Collision collision)
+    {
+        Transform other = collision.collider.transform;
+        bool isGround = false;
+
+        while (other != null)
+        {
+            if (other.CompareTag("Ground"))
+            {
+                isGround = true;
+                break;
+            }
+
+            other = other.parent;
+        }
+
+        if (!isGround)
+        {
+            return false;
+        }
+
+        for (int i = 0; i < collision.contactCount; i++)
+        {
+            if (collision.GetContact(i).normal.y >= MinimumGroundNormalY)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     void RecordMissIfNeeded()

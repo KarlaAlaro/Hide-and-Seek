@@ -140,6 +140,7 @@ public class ProjectileLauncher : MonoBehaviour
         {
             destroyOnGround.bunnyFetcher = bunnyFetcher;
             destroyOnGround.performanceTracker = performanceTracker;
+            destroyOnGround.player = player;
         }
 
         AcornReturnState acornState = spawnedProjectile.GetComponent<AcornReturnState>();
@@ -171,7 +172,11 @@ public class ProjectileLauncher : MonoBehaviour
 
         if (projectileRigidbody != null)
         {
+            projectileRigidbody.isKinematic = false;
+            projectileRigidbody.useGravity = true;
+            projectileRigidbody.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
             projectileRigidbody.linearVelocity = spreadDirection * speed;
+            projectileRigidbody.WakeUp();
         }
     }
     public void LaunchAcorns()

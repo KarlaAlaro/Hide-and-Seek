@@ -22,6 +22,7 @@ public class BunnyFetchAcorn : MonoBehaviour
 
 
     private bool isFetching;
+    private AcornReturnState currentAcornState;
 
     public bool IsFetching => isFetching;
 
@@ -66,6 +67,12 @@ public class BunnyFetchAcorn : MonoBehaviour
         StopAllCoroutines();
         isFetching = false;
 
+        if (currentAcornState != null)
+        {
+            currentAcornState.StopBeingFetched();
+            currentAcornState = null;
+        }
+
         if (agent != null && agent.isOnNavMesh)
         {
             agent.ResetPath();
@@ -81,6 +88,12 @@ public class BunnyFetchAcorn : MonoBehaviour
     IEnumerator FetchRoutine(GameObject acorn)
     {
         isFetching = true;
+        currentAcornState = acorn.GetComponent<AcornReturnState>();
+        if (currentAcornState != null)
+        {
+            currentAcornState.MarkBeingFetched();
+        }
+
         Vector3 returnPosition = transform.position;
 
         if (bunnyAnimator != null)
@@ -103,15 +116,27 @@ public class BunnyFetchAcorn : MonoBehaviour
             yield return null;
         }
 
+        if (acorn == null || Vector3.Distance(transform.position, acorn.transform.position) > pickupDistance)
+        {
+            if (bunnyAnimator != null)
+            {
+                bunnyAnimator.SetBool(RunningHash, false);
+            }
+
+            if (currentAcornState != null)
+            {
+                currentAcornState.StopBeingFetched();
+                currentAcornState = null;
+            }
+
+            isFetching = false;
+            yield break;
+        }
+
         if (bunnyAnimator != null)
         {
             bunnyAnimator.SetBool(RunningHash, false);
             bunnyAnimator.SetBool("Wave", false);
-            if (acorn == null || Vector3.Distance(transform.position, acorn.transform.position) > pickupDistance)
-            {
-                isFetching = false;
-                yield break;
-            }
             bunnyAnimator.CrossFadeInFixedTime(pickupAnimationStateName, pickupAnimationFadeTime, 0, 0f);
             bunnyAnimator.SetTrigger("Pick up");
             if (bunnyAudioSource != null && fetchSound != null)
@@ -128,6 +153,7 @@ public class BunnyFetchAcorn : MonoBehaviour
         {
             Destroy(acorn);
         }
+        currentAcornState = null;
         if (bunnyRunner != null)
         {
             bunnyRunner.RunToGameSpot();

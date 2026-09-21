@@ -1,25 +1,25 @@
 m_ProjectFiles:
   m_ManifestFileStatus:
-    m_FilePath: /Users/karlaalaro/Hide-and-Seek/My project/Packages/manifest.json
+    m_FilePath: /Users/karlaalaro/Desktop/Hide-and-Seek/My project/Packages/manifest.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 639209103270000000
+      ticks: 639254906940000000
     m_Hash: 1645687165
   m_LockFileStatus:
-    m_FilePath: /Users/karlaalaro/Hide-and-Seek/My project/Packages/packages-lock.json
+    m_FilePath: /Users/karlaalaro/Desktop/Hide-and-Seek/My project/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 639209103300000000
+      ticks: 639254906940000000
     m_Hash: 4203913262
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
   m_LocalFileStatus: []
-m_ProjectPath: /Users/karlaalaro/Hide-and-Seek/My project/Packages
+m_ProjectPath: /Users/karlaalaro/Desktop/Hide-and-Seek/My project/Packages
 m_EditorVersion: 6000.2.13f1 (abdb44fca7f7)
 m_ResolvedPackages:
 - packageId: com.unity.2d.sprite@1.0.0
@@ -27,7 +27,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: /Users/karlaalaro/Hide-and-Seek/My project/Library/PackageCache/com.unity.2d.sprite@331abd9a1e2f
+  resolvedPath: /Users/karlaalaro/Desktop/Hide-and-Seek/My project/Library/PackageCache/com.unity.2d.sprite@331abd9a1e2f
   assetPath: Packages/com.unity.2d.sprite
   name: com.unity.2d.sprite
   displayName: 2D Sprite
@@ -107,7 +107,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 2.0.13
   source: 1
-  resolvedPath: /Users/karlaalaro/Hide-and-Seek/My project/Library/PackageCache/com.unity.ai.navigation@42d896194035
+  resolvedPath: /Users/karlaalaro/Desktop/Hide-and-Seek/My project/Library/PackageCache/com.unity.ai.navigation@42d896194035
   assetPath: Packages/com.unity.ai.navigation
   name: com.unity.ai.navigation
   displayName: AI Navigation
@@ -240,7 +240,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 2.10.2
   source: 1
-  resolvedPath: /Users/karlaalaro/Hide-and-Seek/My project/Library/PackageCache/com.unity.collab-proxy@3351acaba9c9
+  resolvedPath: /Users/karlaalaro/Desktop/Hide-and-Seek/My project/Library/PackageCache/com.unity.collab-proxy@3351acaba9c9
   assetPath: Packages/com.unity.collab-proxy
   name: com.unity.collab-proxy
   displayName: Unity Version Control
@@ -348,6 +348,7 @@ m_ResolvedPackages:
     - 2.13.3
     - 2.13.4
     - 2.13.5
+    - 2.13.6
     compatible:
     - 2.10.2
     - 2.11.2
@@ -357,6 +358,7 @@ m_ResolvedPackages:
     - 2.13.3
     - 2.13.4
     - 2.13.5
+    - 2.13.6
     recommended: 2.10.2
     deprecated: []
   dependencies: []
@@ -435,7 +437,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 3.0.38
   source: 1
-  resolvedPath: /Users/karlaalaro/Hide-and-Seek/My project/Library/PackageCache/com.unity.ide.rider@1f60b3138684
+  resolvedPath: /Users/karlaalaro/Desktop/Hide-and-Seek/My project/Library/PackageCache/com.unity.ide.rider@1f60b3138684
   assetPath: Packages/com.unity.ide.rider
   name: com.unity.ide.rider
   displayName: JetBrains Rider Editor
@@ -501,10 +503,12 @@ m_ResolvedPackages:
     - 3.0.38
     - 3.0.39
     - 3.0.40
+    - 3.1.0
     compatible:
     - 3.0.38
     - 3.0.39
     - 3.0.40
+    - 3.1.0
     recommended: 3.0.40
     deprecated:
     - 3.0.37
@@ -570,7 +574,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 2.0.25
   source: 1
-  resolvedPath: /Users/karlaalaro/Hide-and-Seek/My project/Library/PackageCache/com.unity.ide.visualstudio@74aa435fc4bb
+  resolvedPath: /Users/karlaalaro/Desktop/Hide-and-Seek/My project/Library/PackageCache/com.unity.ide.visualstudio@74aa435fc4bb
   assetPath: Packages/com.unity.ide.visualstudio
   name: com.unity.ide.visualstudio
   displayName: Visual Studio Editor
@@ -614,11 +618,13 @@ m_ResolvedPackages:
     - 2.0.25
     - 2.0.26
     - 2.0.27
+    - 2.0.28
     compatible:
     - 2.0.25
     - 2.0.26
     - 2.0.27
-    recommended: 2.0.27
+    - 2.0.28
+    recommended: 2.0.28
     deprecated: []
   dependencies:
   - name: com.unity.test-framework
@@ -688,7 +694,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.14.2
   source: 1
-  resolvedPath: /Users/karlaalaro/Hide-and-Seek/My project/Library/PackageCache/com.unity.inputsystem@be6c4fd0abf5
+  resolvedPath: /Users/karlaalaro/Desktop/Hide-and-Seek/My project/Library/PackageCache/com.unity.inputsystem@be6c4fd0abf5
   assetPath: Packages/com.unity.inputsystem
   name: com.unity.inputsystem
   displayName: Input System
@@ -858,7 +864,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: /Users/karlaalaro/Hide-and-Seek/My project/Library/PackageCache/com.unity.multiplayer.center@f3fb577b3546
+  resolvedPath: /Users/karlaalaro/Desktop/Hide-and-Seek/My project/Library/PackageCache/com.unity.multiplayer.center@f3fb577b3546
   assetPath: Packages/com.unity.multiplayer.center
   name: com.unity.multiplayer.center
   displayName: Multiplayer Center
@@ -954,7 +960,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 3.5.0
   source: 1
-  resolvedPath: /Users/karlaalaro/Hide-and-Seek/My project/Library/PackageCache/com.unity.postprocessing@94edadb6c5ab
+  resolvedPath: /Users/karlaalaro/Desktop/Hide-and-Seek/My project/Library/PackageCache/com.unity.postprocessing@94edadb6c5ab
   assetPath: Packages/com.unity.postprocessing
   name: com.unity.postprocessing
   displayName: Post Processing
@@ -1083,7 +1089,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 17.2.0
   source: 2
-  resolvedPath: /Users/karlaalaro/Hide-and-Seek/My project/Library/PackageCache/com.unity.render-pipelines.universal@e6a37f17fabd
+  resolvedPath: /Users/karlaalaro/Desktop/Hide-and-Seek/My project/Library/PackageCache/com.unity.render-pipelines.universal@e6a37f17fabd
   assetPath: Packages/com.unity.render-pipelines.universal
   name: com.unity.render-pipelines.universal
   displayName: Universal Render Pipeline
@@ -1210,7 +1216,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 17.2.0
   source: 2
-  resolvedPath: /Users/karlaalaro/Hide-and-Seek/My project/Library/PackageCache/com.unity.shadergraph@fb6c7a62c815
+  resolvedPath: /Users/karlaalaro/Desktop/Hide-and-Seek/My project/Library/PackageCache/com.unity.shadergraph@fb6c7a62c815
   assetPath: Packages/com.unity.shadergraph
   name: com.unity.shadergraph
   displayName: Shader Graph
@@ -1326,7 +1332,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 5.3.2
   source: 1
-  resolvedPath: /Users/karlaalaro/Hide-and-Seek/My project/Library/PackageCache/com.unity.terrain-tools@bcd5ab3144b8
+  resolvedPath: /Users/karlaalaro/Desktop/Hide-and-Seek/My project/Library/PackageCache/com.unity.terrain-tools@bcd5ab3144b8
   assetPath: Packages/com.unity.terrain-tools
   name: com.unity.terrain-tools
   displayName: Terrain Tools
@@ -1374,10 +1380,12 @@ m_ResolvedPackages:
     - 5.3.0
     - 5.3.1
     - 5.3.2
+    - 5.3.3
     compatible:
     - 5.3.1
     - 5.3.2
-    recommended: 5.3.2
+    - 5.3.3
+    recommended: 5.3.3
     deprecated: []
   dependencies:
   - name: com.unity.modules.terrain
@@ -1453,7 +1461,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.6.0
   source: 2
-  resolvedPath: /Users/karlaalaro/Hide-and-Seek/My project/Library/PackageCache/com.unity.test-framework@d97b7cd61ded
+  resolvedPath: /Users/karlaalaro/Desktop/Hide-and-Seek/My project/Library/PackageCache/com.unity.test-framework@d97b7cd61ded
   assetPath: Packages/com.unity.test-framework
   name: com.unity.test-framework
   displayName: Test Framework
@@ -1543,7 +1551,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.8.9
   source: 1
-  resolvedPath: /Users/karlaalaro/Hide-and-Seek/My project/Library/PackageCache/com.unity.timeline@6b9e48457ddb
+  resolvedPath: /Users/karlaalaro/Desktop/Hide-and-Seek/My project/Library/PackageCache/com.unity.timeline@6b9e48457ddb
   assetPath: Packages/com.unity.timeline
   name: com.unity.timeline
   displayName: Timeline
@@ -1650,12 +1658,14 @@ m_ResolvedPackages:
     - 1.8.10
     - 1.8.11
     - 1.8.12
+    - 1.8.13
     compatible:
     - 1.8.9
     - 1.8.10
     - 1.8.11
     - 1.8.12
-    recommended: 1.8.12
+    - 1.8.13
+    recommended: 1.8.13
     deprecated: []
   dependencies:
   - name: com.unity.modules.audio
@@ -1747,7 +1757,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 2.0.0
   source: 2
-  resolvedPath: /Users/karlaalaro/Hide-and-Seek/My project/Library/PackageCache/com.unity.ugui@a73b706e285a
+  resolvedPath: /Users/karlaalaro/Desktop/Hide-and-Seek/My project/Library/PackageCache/com.unity.ugui@a73b706e285a
   assetPath: Packages/com.unity.ugui
   name: com.unity.ugui
   displayName: Unity UI
@@ -1843,7 +1853,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.9.8
   source: 1
-  resolvedPath: /Users/karlaalaro/Hide-and-Seek/My project/Library/PackageCache/com.unity.visualscripting@b4d700247d4b
+  resolvedPath: /Users/karlaalaro/Desktop/Hide-and-Seek/My project/Library/PackageCache/com.unity.visualscripting@b4d700247d4b
   assetPath: Packages/com.unity.visualscripting
   name: com.unity.visualscripting
   displayName: Visual Scripting
@@ -1977,7 +1987,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 6.2.1
   source: 1
-  resolvedPath: /Users/karlaalaro/Hide-and-Seek/My project/Library/PackageCache/com.unity.xr.arfoundation@9febd5ccae7a
+  resolvedPath: /Users/karlaalaro/Desktop/Hide-and-Seek/My project/Library/PackageCache/com.unity.xr.arfoundation@9febd5ccae7a
   assetPath: Packages/com.unity.xr.arfoundation
   name: com.unity.xr.arfoundation
   displayName: AR Foundation
@@ -2155,9 +2165,12 @@ m_ResolvedPackages:
     - 6.5.0-pre.2
     - 6.5.0-pre.3
     - 6.5.0
+    - 6.5.1
     - 6.6.0-pre.1
     - 6.6.0-pre.2
     - 6.6.0
+    - 6.6.1
+    - 6.6.2
     compatible:
     - 6.2.0
     - 6.2.1
@@ -2178,9 +2191,12 @@ m_ResolvedPackages:
     - 6.5.0-pre.2
     - 6.5.0-pre.3
     - 6.5.0
+    - 6.5.1
     - 6.6.0-pre.1
     - 6.6.0-pre.2
     - 6.6.0
+    - 6.6.1
+    - 6.6.2
     recommended: 6.2.1
     deprecated: []
   dependencies:
@@ -2326,7 +2342,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.8.0
   source: 1
-  resolvedPath: /Users/karlaalaro/Hide-and-Seek/My project/Library/PackageCache/com.unity.xr.hands@ed65bce01132
+  resolvedPath: /Users/karlaalaro/Desktop/Hide-and-Seek/My project/Library/PackageCache/com.unity.xr.hands@ed65bce01132
   assetPath: Packages/com.unity.xr.hands
   name: com.unity.xr.hands
   displayName: XR Hands
@@ -2374,6 +2390,8 @@ m_ResolvedPackages:
     - 1.8.0
     - 1.8.1
     - 1.9.0-pre.1
+    - 1.9.0
+    - 1.10.0-pre.1
     compatible:
     - 1.7.1
     - 1.7.2
@@ -2382,6 +2400,8 @@ m_ResolvedPackages:
     - 1.8.0
     - 1.8.1
     - 1.9.0-pre.1
+    - 1.9.0
+    - 1.10.0-pre.1
     recommended: 1.7.3
     deprecated: []
   dependencies:
@@ -2490,7 +2510,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 3.2.1
   source: 1
-  resolvedPath: /Users/karlaalaro/Hide-and-Seek/My project/Library/PackageCache/com.unity.xr.interaction.toolkit@76258c00be3e
+  resolvedPath: /Users/karlaalaro/Desktop/Hide-and-Seek/My project/Library/PackageCache/com.unity.xr.interaction.toolkit@76258c00be3e
   assetPath: Packages/com.unity.xr.interaction.toolkit
   name: com.unity.xr.interaction.toolkit
   displayName: XR Interaction Toolkit
@@ -2586,6 +2606,9 @@ m_ResolvedPackages:
     - 3.5.0
     - 3.5.1
     - 3.6.0-pre.1
+    - 3.6.0
+    - 3.6.1
+    - 3.7.0-pre.1
     compatible:
     - 3.2.2
     - 3.3.0-pre.1
@@ -2601,6 +2624,9 @@ m_ResolvedPackages:
     - 3.5.0
     - 3.5.1
     - 3.6.0-pre.1
+    - 3.6.0
+    - 3.6.1
+    - 3.7.0-pre.1
     recommended: 3.2.2
     deprecated: []
   dependencies:
@@ -2746,7 +2772,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 4.6.0
   source: 1
-  resolvedPath: /Users/karlaalaro/Hide-and-Seek/My project/Library/PackageCache/com.unity.xr.management@ca5b202bb583
+  resolvedPath: /Users/karlaalaro/Desktop/Hide-and-Seek/My project/Library/PackageCache/com.unity.xr.management@ca5b202bb583
   assetPath: Packages/com.unity.xr.management
   name: com.unity.xr.management
   displayName: XR Plugin Management
@@ -2821,11 +2847,13 @@ m_ResolvedPackages:
     - 4.5.3
     - 4.5.4
     - 4.6.0
+    - 4.6.1
     - 4.7.0
     compatible:
     - 4.5.3
     - 4.5.4
     - 4.6.0
+    - 4.6.1
     - 4.7.0
     recommended: 4.5.4
     deprecated: []
@@ -2926,7 +2954,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.16.1
   source: 1
-  resolvedPath: /Users/karlaalaro/Hide-and-Seek/My project/Library/PackageCache/com.unity.xr.openxr@ef0033a586bf
+  resolvedPath: /Users/karlaalaro/Desktop/Hide-and-Seek/My project/Library/PackageCache/com.unity.xr.openxr@ef0033a586bf
   assetPath: Packages/com.unity.xr.openxr
   name: com.unity.xr.openxr
   displayName: OpenXR Plugin
@@ -2995,6 +3023,8 @@ m_ResolvedPackages:
     - 1.17.1
     - 1.18.0-pre.1
     - 1.18.0-pre.2
+    - 1.18.0
+    - 1.19.0-pre.1
     compatible:
     - 1.16.0
     - 1.16.1
@@ -3004,6 +3034,8 @@ m_ResolvedPackages:
     - 1.17.1
     - 1.18.0-pre.1
     - 1.18.0-pre.2
+    - 1.18.0
+    - 1.19.0-pre.1
     recommended: 1.16.1
     deprecated: []
   dependencies:
@@ -5889,7 +5921,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 2.5.3
   source: 1
-  resolvedPath: /Users/karlaalaro/Hide-and-Seek/My project/Library/PackageCache/com.unity.xr.core-utils@f0450cbac8d6
+  resolvedPath: /Users/karlaalaro/Desktop/Hide-and-Seek/My project/Library/PackageCache/com.unity.xr.core-utils@f0450cbac8d6
   assetPath: Packages/com.unity.xr.core-utils
   name: com.unity.xr.core-utils
   displayName: XR Core Utilities
@@ -6021,7 +6053,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 2.1.12
   source: 1
-  resolvedPath: /Users/karlaalaro/Hide-and-Seek/My project/Library/PackageCache/com.unity.xr.legacyinputhelpers@b7579e86f3b4
+  resolvedPath: /Users/karlaalaro/Desktop/Hide-and-Seek/My project/Library/PackageCache/com.unity.xr.legacyinputhelpers@b7579e86f3b4
   assetPath: Packages/com.unity.xr.legacyinputhelpers
   name: com.unity.xr.legacyinputhelpers
   displayName: XR Legacy Input Helpers
@@ -6155,7 +6187,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.3.2
   source: 1
-  resolvedPath: /Users/karlaalaro/Hide-and-Seek/My project/Library/PackageCache/com.unity.mathematics@8017b507cc74
+  resolvedPath: /Users/karlaalaro/Desktop/Hide-and-Seek/My project/Library/PackageCache/com.unity.mathematics@8017b507cc74
   assetPath: Packages/com.unity.mathematics
   name: com.unity.mathematics
   displayName: Mathematics
@@ -6256,7 +6288,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.0.0
   source: 1
-  resolvedPath: /Users/karlaalaro/Hide-and-Seek/My project/Library/PackageCache/com.unity.editorcoroutines@7d48783e7b8c
+  resolvedPath: /Users/karlaalaro/Desktop/Hide-and-Seek/My project/Library/PackageCache/com.unity.editorcoroutines@7d48783e7b8c
   assetPath: Packages/com.unity.editorcoroutines
   name: com.unity.editorcoroutines
   displayName: Editor Coroutines
@@ -6347,7 +6379,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 2.0.5
   source: 2
-  resolvedPath: /Users/karlaalaro/Hide-and-Seek/My project/Library/PackageCache/com.unity.ext.nunit@031a54704bff
+  resolvedPath: /Users/karlaalaro/Desktop/Hide-and-Seek/My project/Library/PackageCache/com.unity.ext.nunit@031a54704bff
   assetPath: Packages/com.unity.ext.nunit
   name: com.unity.ext.nunit
   displayName: Custom NUnit
@@ -6427,7 +6459,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 17.2.0
   source: 2
-  resolvedPath: /Users/karlaalaro/Hide-and-Seek/My project/Library/PackageCache/com.unity.render-pipelines.core@24c85c372d98
+  resolvedPath: /Users/karlaalaro/Desktop/Hide-and-Seek/My project/Library/PackageCache/com.unity.render-pipelines.core@24c85c372d98
   assetPath: Packages/com.unity.render-pipelines.core
   name: com.unity.render-pipelines.core
   displayName: Scriptable Render Pipeline Core
@@ -6553,7 +6585,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 4.9.3
   source: 1
-  resolvedPath: /Users/karlaalaro/Hide-and-Seek/My project/Library/PackageCache/com.unity.searcher@1e17ce91558d
+  resolvedPath: /Users/karlaalaro/Desktop/Hide-and-Seek/My project/Library/PackageCache/com.unity.searcher@1e17ce91558d
   assetPath: Packages/com.unity.searcher
   name: com.unity.searcher
   displayName: Searcher
@@ -6653,7 +6685,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 17.0.3
   source: 2
-  resolvedPath: /Users/karlaalaro/Hide-and-Seek/My project/Library/PackageCache/com.unity.render-pipelines.universal-config@8dc1aab4af1d
+  resolvedPath: /Users/karlaalaro/Desktop/Hide-and-Seek/My project/Library/PackageCache/com.unity.render-pipelines.universal-config@8dc1aab4af1d
   assetPath: Packages/com.unity.render-pipelines.universal-config
   name: com.unity.render-pipelines.universal-config
   displayName: Universal Render Pipeline Config
@@ -6761,7 +6793,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.8.25
   source: 1
-  resolvedPath: /Users/karlaalaro/Hide-and-Seek/My project/Library/PackageCache/com.unity.burst@1df634d836b8
+  resolvedPath: /Users/karlaalaro/Desktop/Hide-and-Seek/My project/Library/PackageCache/com.unity.burst@1df634d836b8
   assetPath: Packages/com.unity.burst
   name: com.unity.burst
   displayName: Burst
@@ -7005,7 +7037,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 2.6.2
   source: 1
-  resolvedPath: /Users/karlaalaro/Hide-and-Seek/My project/Library/PackageCache/com.unity.collections@aea9d3bd5e19
+  resolvedPath: /Users/karlaalaro/Desktop/Hide-and-Seek/My project/Library/PackageCache/com.unity.collections@aea9d3bd5e19
   assetPath: Packages/com.unity.collections
   name: com.unity.collections
   displayName: Collections
@@ -7201,7 +7233,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.0.1
   source: 2
-  resolvedPath: /Users/karlaalaro/Hide-and-Seek/My project/Library/PackageCache/com.unity.rendering.light-transport@2c9279f90d7c
+  resolvedPath: /Users/karlaalaro/Desktop/Hide-and-Seek/My project/Library/PackageCache/com.unity.rendering.light-transport@2c9279f90d7c
   assetPath: Packages/com.unity.rendering.light-transport
   name: com.unity.rendering.light-transport
   displayName: Unity Light Transport Library
@@ -7307,7 +7339,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.11.5
   source: 1
-  resolvedPath: /Users/karlaalaro/Hide-and-Seek/My project/Library/PackageCache/com.unity.nuget.mono-cecil@d78732e851eb
+  resolvedPath: /Users/karlaalaro/Desktop/Hide-and-Seek/My project/Library/PackageCache/com.unity.nuget.mono-cecil@d78732e851eb
   assetPath: Packages/com.unity.nuget.mono-cecil
   name: com.unity.nuget.mono-cecil
   displayName: Mono Cecil
@@ -7402,7 +7434,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 3.2.0
   source: 1
-  resolvedPath: /Users/karlaalaro/Hide-and-Seek/My project/Library/PackageCache/com.unity.test-framework.performance@0840f58e4562
+  resolvedPath: /Users/karlaalaro/Desktop/Hide-and-Seek/My project/Library/PackageCache/com.unity.test-framework.performance@0840f58e4562
   assetPath: Packages/com.unity.test-framework.performance
   name: com.unity.test-framework.performance
   displayName: Performance testing API

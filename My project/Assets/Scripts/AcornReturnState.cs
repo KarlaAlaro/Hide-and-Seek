@@ -17,6 +17,11 @@ public class AcornReturnState : MonoBehaviour
         IsBeingFetched = true;
     }
 
+    public void StopBeingFetched()
+    {
+        IsBeingFetched = false;
+    }
+
     public void ResetForLaunch()
     {
         HasLanded = false;
