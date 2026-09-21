@@ -1,3 +1,4 @@
+// Checks player entry into the start trigger and gates its start handling on bunny arrival.
 using UnityEngine;
 
 public class StartMinigameOnPlayerEnter : MonoBehaviour

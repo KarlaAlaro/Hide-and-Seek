@@ -1,3 +1,4 @@
+// Configures the XR hands' movement and turning modes, gravity, flying, and grab locomotion.
 using UnityEngine.XR.Interaction.Toolkit.Locomotion.Gravity;
 using UnityEngine.XR.Interaction.Toolkit.Locomotion.Movement;
 using UnityEngine.XR.Interaction.Toolkit.Locomotion.Turning;

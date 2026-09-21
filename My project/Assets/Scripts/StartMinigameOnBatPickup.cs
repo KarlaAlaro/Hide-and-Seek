@@ -1,3 +1,4 @@
+// Starts the projectile throw loop when the bat pickup interaction requests the minigame.
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 

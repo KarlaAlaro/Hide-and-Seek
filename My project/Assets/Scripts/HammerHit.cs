@@ -1,3 +1,4 @@
+// Measures bat impacts on acorns, applies hit effects, and records swing and hit performance.
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Inputs.Haptics;
 

@@ -1,3 +1,4 @@
+// Responds when the player enters the ready trigger by updating the bunny's wave state.
 using UnityEngine;
 
 public class BunnyWaveWhenPlayerReady : MonoBehaviour

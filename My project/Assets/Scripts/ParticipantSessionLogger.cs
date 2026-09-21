@@ -1,3 +1,4 @@
+// Saves one participant's session performance summary as a row in a CSV file.
 using System.Globalization;
 using System.IO;
 using UnityEngine;

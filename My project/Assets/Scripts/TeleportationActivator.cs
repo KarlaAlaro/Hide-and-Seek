@@ -1,3 +1,4 @@
+// Shows the XR teleport ray while its configured input action is pressed.
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;

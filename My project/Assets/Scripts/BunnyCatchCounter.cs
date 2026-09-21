@@ -1,3 +1,4 @@
+// Counts valid returned acorns, updates the catch display, and signals level completion.
 using TMPro;
 using UnityEngine;
 using System.Collections;

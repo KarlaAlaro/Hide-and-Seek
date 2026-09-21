@@ -1,3 +1,4 @@
+// Ends the timed experience, stops throwing, saves the participant session, and starts the finale.
 using TMPro;
 using UnityEngine;
 

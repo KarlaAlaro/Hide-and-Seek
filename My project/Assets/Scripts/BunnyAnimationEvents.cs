@@ -1,3 +1,4 @@
+// Relays bunny throw animation events to the projectile launcher.
 using UnityEngine;
 
 public class BunnyAnimationEvents : MonoBehaviour

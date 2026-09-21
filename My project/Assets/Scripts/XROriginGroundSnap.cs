@@ -1,3 +1,4 @@
+// Snaps the XR Origin's CharacterController onto the nearest eligible ground surface at startup.
 using UnityEngine;
 
 [DefaultExecutionOrder(-10000)]

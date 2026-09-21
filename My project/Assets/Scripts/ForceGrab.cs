@@ -1,3 +1,4 @@
+// Implements input-driven grabbing, holding, and releasing of nearby physics objects.
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.InputSystem;

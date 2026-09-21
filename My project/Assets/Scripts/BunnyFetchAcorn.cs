@@ -1,3 +1,4 @@
+// Lets the bunny fetch eligible landed acorns, pick them up, and return to its game spot.
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;

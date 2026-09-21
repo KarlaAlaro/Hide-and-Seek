@@ -1,3 +1,4 @@
+// Records rate-limited attempts when the player enters the bunny's approach trigger.
 using UnityEngine;
 
 public class BunnyApproachCounter : MonoBehaviour

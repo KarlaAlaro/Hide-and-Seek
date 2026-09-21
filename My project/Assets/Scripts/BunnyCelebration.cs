@@ -1,3 +1,4 @@
+// Runs the bunny near the player and plays its end-of-experience celebration.
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;

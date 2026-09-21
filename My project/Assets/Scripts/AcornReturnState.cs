@@ -1,3 +1,4 @@
+// Tracks an acorn's flight, landing, fetch, and scoring state so it is counted only when appropriate.
 using UnityEngine;
 
 public class AcornReturnState : MonoBehaviour

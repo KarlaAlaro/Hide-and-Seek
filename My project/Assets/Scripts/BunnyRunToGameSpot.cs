@@ -1,3 +1,4 @@
+// Moves the bunny between game spots and handles its arrival, greeting, and facing direction.
 using UnityEngine;
 using UnityEngine.AI;
 

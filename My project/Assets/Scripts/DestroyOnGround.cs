@@ -1,3 +1,4 @@
+// Handles acorn ground impacts, fetch eligibility, miss recording, and eventual cleanup.
 using System.Collections;
 using UnityEngine;
 

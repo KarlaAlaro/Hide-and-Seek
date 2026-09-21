@@ -1,3 +1,4 @@
+// Animates the bat's glowing pickup cue and hand hint until the bat is held.
 using UnityEngine;
 
 public class BatPickupHint : MonoBehaviour

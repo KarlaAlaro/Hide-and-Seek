@@ -1,3 +1,4 @@
+// Tracks level and session statistics for throws, catches, misses, swings, and accuracy.
 using UnityEngine;
 
 public class PlayerPerformanceTracker : MonoBehaviour

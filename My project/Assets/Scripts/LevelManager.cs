@@ -1,3 +1,4 @@
+// Applies level settings and adjusts minigame difficulty using the player's recent performance.
 using UnityEngine;
 
 public class LevelManager : MonoBehaviour

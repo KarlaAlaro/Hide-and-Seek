@@ -1,3 +1,4 @@
+// Runs the bunny's throw loop and spawns acorns with their launch physics and tracking state.
 using UnityEngine;
 using System.Collections;
 
